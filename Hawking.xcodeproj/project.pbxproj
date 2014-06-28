@@ -650,6 +650,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Ofast";
+				USER_HEADER_SEARCH_PATHS = " ${SRCROOT}/Pods/Headers";
 			};
 			name = Debug;
 		};
@@ -664,6 +665,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Ofast";
+				USER_HEADER_SEARCH_PATHS = " ${SRCROOT}/Pods/Headers";
 			};
 			name = Release;
 		};
