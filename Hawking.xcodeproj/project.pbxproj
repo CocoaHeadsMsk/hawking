@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		035DC51A195EE6F80005CD5C /* Parser-temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DC519195EE6F80005CD5C /* Parser-temp.swift */; };
 		0742234752C24FE3A6AA3035 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5335B853CC8B412282997A19 /* libPods.a */; };
 		920E2ED5195ED92400BBF13A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E2ED4195ED92400BBF13A /* AppDelegate.swift */; };
 		920E2ED7195ED92400BBF13A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 920E2ED6195ED92400BBF13A /* Images.xcassets */; };
@@ -97,6 +98,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		035DC519195EE6F80005CD5C /* Parser-temp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Parser-temp.swift"; sourceTree = "<group>"; };
 		10849016A88F4A01A915DB67 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		5335B853CC8B412282997A19 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		920E2ECF195ED92400BBF13A /* Hawking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hawking.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				B319DF3B195EDA34008E9B9C /* Parser.h */,
+				035DC519195EE6F80005CD5C /* Parser-temp.swift */,
 				B319DF3D195EDA34008E9B9C /* Parser.m */,
 			);
 			path = Parser;
@@ -478,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				035DC51A195EE6F80005CD5C /* Parser-temp.swift in Sources */,
 				B319DF3E195EDA34008E9B9C /* Parser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -681,14 +685,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 10849016A88F4A01A915DB67 /* Pods.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -696,6 +703,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 10849016A88F4A01A915DB67 /* Pods.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
