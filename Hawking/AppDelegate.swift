@@ -26,7 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return ("", "")
         }
 
+<<<<<<< HEAD
         Grabber().grabList(url: "http://blog.m4rr.ru/",
+=======
+        Grabber().loadData("http://ya.ru",
+>>>>>>> FETCH_HEAD
             success: {data in
                 //var x = data.map(fn)
             }, failure: { error in

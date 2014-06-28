@@ -7,6 +7,3 @@
 //
 
 #import "AFNetworking/AFNetworking.h"
-
-#import "hpple/TFHpple.h"
-#import "hpple/XPathQuery.h"
