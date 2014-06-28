@@ -22,11 +22,11 @@ class Grabber {
                 failure(error: error)
             })
     }
-
-    func grabList(input: String, success: (a:Array<AnyObject>) -> Void, failure: (err:NSError) -> Void) -> Bool {
-        let manager = AFHTTPRequestOperationManager()
-        manager.requestSerializer.setValue("608c6c08443c6d933576b90966b727358d0066b4", forHTTPHeaderField: "X-Auth-Token")
-          
+    
+    func grabList(#url: String, success: (a:Array<AnyObject>) -> Void, failure: (err:NSError) -> Void) {
+        if let listUrl = NSURL.URLWithString(url) {
+            let manager = AFHTTPRequestOperationManager()
+            manager.requestSerializer = AFHTTPRequestSerializer()
             manager.GET( "http://graph.facebook.com",
                 parameters: nil,
                 success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
@@ -35,32 +35,10 @@ class Grabber {
                 failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
                     println("Error: " + error.localizedDescription)
                 })
-            
-
-        return false
-
-
-        if input.hasPrefix("http") {
-            grabNewsList(url: input, success: success, failure: failure)
-        } else {
-            grabNewsList(content: input, success: success, failure: failure)
-        }
-        
-        
-//        success(a: Array<AnyObject>)
-//        failure(err: String)
-        
-        
-        return false
-    }
-    
-    func grabNewsList(#url: String, success: (a:Array<AnyObject>) -> Void, failure: (err:NSError) -> Void) {
-        if let listUrl = NSURL.URLWithString(url) {
-            
         }
     }
     
-    func grabNewsList(#content: String, success: (a:Array<AnyObject>) -> Void, failure: (err:NSError) -> Void) {
+    func grabList(#txt: String, success: (a:Array<AnyObject>) -> Void, failure: (err:NSError) -> Void) {
         
     }
     
