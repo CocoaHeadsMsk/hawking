@@ -117,7 +117,7 @@
 		5335B853CC8B412282997A19 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		920E2ECF195ED92400BBF13A /* Hawking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hawking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		920E2ED3195ED92400BBF13A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		920E2ED4195ED92400BBF13A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		920E2ED4195ED92400BBF13A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Hawking/AppDelegate.swift; sourceTree = "<group>"; };
 		920E2ED6195ED92400BBF13A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		920E2EDC195ED92400BBF13A /* HawkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HawkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		920E2EE1195ED92400BBF13A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -239,6 +239,7 @@
 		920E2EC6195ED92400BBF13A = {
 			isa = PBXGroup;
 			children = (
+				920E2ED4195ED92400BBF13A /* AppDelegate.swift */,
 				920E2ED1195ED92400BBF13A /* Hawking */,
 				920E2EDF195ED92400BBF13A /* HawkingTests */,
 				B36E82C4195EE985005F57B9 /* Grabber */,
@@ -263,7 +264,6 @@
 		920E2ED1195ED92400BBF13A /* Hawking */ = {
 			isa = PBXGroup;
 			children = (
-				920E2ED4195ED92400BBF13A /* AppDelegate.swift */,
 				920E2ED6195ED92400BBF13A /* Images.xcassets */,
 				920E2ED2195ED92400BBF13A /* Supporting Files */,
 			);
