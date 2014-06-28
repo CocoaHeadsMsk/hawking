@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
+        openStartLent();
+        
         return true
     }
 
@@ -42,6 +44,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func openStartLent() {
+        let lentVc = LentViewController(nibName: "LentViewController", bundle: nil);
+        let nVC = UINavigationController(rootViewController: lentVc);
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [nVC, nVC];
+        tabBarController.selectedIndex = 0
+        
+        self.window!.rootViewController = tabBarController
+        self.window?.makeKeyAndVisible()
     }
 
 

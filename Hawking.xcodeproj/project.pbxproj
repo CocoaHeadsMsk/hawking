@@ -11,6 +11,13 @@
 		920E2ED5195ED92400BBF13A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E2ED4195ED92400BBF13A /* AppDelegate.swift */; };
 		920E2ED7195ED92400BBF13A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 920E2ED6195ED92400BBF13A /* Images.xcassets */; };
 		920E2EE3195ED92400BBF13A /* HawkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E2EE2195ED92400BBF13A /* HawkingTests.swift */; };
+		92268C26195EEF0D00B3AB97 /* LentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92268C24195EEF0D00B3AB97 /* LentViewController.swift */; };
+		92268C27195EEF0D00B3AB97 /* LentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92268C25195EEF0D00B3AB97 /* LentViewController.xib */; };
+		923658CC195EEE64008CDC77 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923658CB195EEE64008CDC77 /* BaseViewController.swift */; };
+		926A8F96195EFF9E00463ECA /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926A8F95195EFF9E00463ECA /* StringExtensions.swift */; };
+		929B60E7195EF1DF006515D2 /* LentFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929B60E5195EF1DF006515D2 /* LentFeedCell.swift */; };
+		929B60E8195EF1DF006515D2 /* LentFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929B60E6195EF1DF006515D2 /* LentFeedCell.xib */; };
+		929B60EA195EFE59006515D2 /* breakingnews1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 929B60E9195EFE59006515D2 /* breakingnews1.jpg */; };
 		92DFD198195EDDFB0009EF88 /* libParser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B319DF39195EDA34008E9B9C /* libParser.a */; };
 		B319DF3C195EDA34008E9B9C /* Parser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B319DF3B195EDA34008E9B9C /* Parser.h */; };
 		B319DF3E195EDA34008E9B9C /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = B319DF3D195EDA34008E9B9C /* Parser.m */; };
@@ -106,6 +113,13 @@
 		920E2EDC195ED92400BBF13A /* HawkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HawkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		920E2EE1195ED92400BBF13A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		920E2EE2195ED92400BBF13A /* HawkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HawkingTests.swift; sourceTree = "<group>"; };
+		92268C24195EEF0D00B3AB97 /* LentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LentViewController.swift; path = ViewControllers/LentVC/LentViewController.swift; sourceTree = "<group>"; };
+		92268C25195EEF0D00B3AB97 /* LentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LentViewController.xib; path = ViewControllers/LentVC/LentViewController.xib; sourceTree = "<group>"; };
+		923658CB195EEE64008CDC77 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewControllers/Utility/BaseViewController.swift; sourceTree = "<group>"; };
+		926A8F95195EFF9E00463ECA /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Extensions/String/StringExtensions.swift; sourceTree = "<group>"; };
+		929B60E5195EF1DF006515D2 /* LentFeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LentFeedCell.swift; path = ViewControllers/LentVC/Cells/LentFeedCell.swift; sourceTree = "<group>"; };
+		929B60E6195EF1DF006515D2 /* LentFeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LentFeedCell.xib; path = ViewControllers/LentVC/Cells/LentFeedCell.xib; sourceTree = "<group>"; };
+		929B60E9195EFE59006515D2 /* breakingnews1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = breakingnews1.jpg; sourceTree = "<group>"; };
 		B319DF39195EDA34008E9B9C /* libParser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libParser.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B319DF3B195EDA34008E9B9C /* Parser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
 		B319DF3D195EDA34008E9B9C /* Parser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
@@ -183,7 +197,10 @@
 		920E2ED1195ED92400BBF13A /* Hawking */ = {
 			isa = PBXGroup;
 			children = (
+				929B60EB195EFF71006515D2 /* Extensions */,
+				929B60E9195EFE59006515D2 /* breakingnews1.jpg */,
 				920E2ED4195ED92400BBF13A /* AppDelegate.swift */,
+				923658C8195EEE1D008CDC77 /* ViewControllers */,
 				920E2ED6195ED92400BBF13A /* Images.xcassets */,
 				920E2ED2195ED92400BBF13A /* Supporting Files */,
 			);
@@ -213,6 +230,58 @@
 				920E2EE1195ED92400BBF13A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		92268C29195EF19800B3AB97 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				929B60E5195EF1DF006515D2 /* LentFeedCell.swift */,
+				929B60E6195EF1DF006515D2 /* LentFeedCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		923658C8195EEE1D008CDC77 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				923658CA195EEE42008CDC77 /* Utility */,
+				923658C9195EEE2F008CDC77 /* LentViewCtontroller */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		923658C9195EEE2F008CDC77 /* LentViewCtontroller */ = {
+			isa = PBXGroup;
+			children = (
+				92268C29195EF19800B3AB97 /* Cells */,
+				92268C24195EEF0D00B3AB97 /* LentViewController.swift */,
+				92268C25195EEF0D00B3AB97 /* LentViewController.xib */,
+			);
+			name = LentViewCtontroller;
+			sourceTree = "<group>";
+		};
+		923658CA195EEE42008CDC77 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				923658CB195EEE64008CDC77 /* BaseViewController.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		929B60EB195EFF71006515D2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				929B60EC195EFF7A006515D2 /* String */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		929B60EC195EFF7A006515D2 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				926A8F95195EFF9E00463ECA /* StringExtensions.swift */,
+			);
+			name = String;
 			sourceTree = "<group>";
 		};
 		B319DF3A195EDA34008E9B9C /* Parser */ = {
@@ -375,6 +444,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				920E2ED7195ED92400BBF13A /* Images.xcassets in Resources */,
+				929B60EA195EFE59006515D2 /* breakingnews1.jpg in Resources */,
+				92268C27195EEF0D00B3AB97 /* LentViewController.xib in Resources */,
+				929B60E8195EF1DF006515D2 /* LentFeedCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +534,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				929B60E7195EF1DF006515D2 /* LentFeedCell.swift in Sources */,
+				92268C26195EEF0D00B3AB97 /* LentViewController.swift in Sources */,
+				926A8F96195EFF9E00463ECA /* StringExtensions.swift in Sources */,
 				920E2ED5195ED92400BBF13A /* AppDelegate.swift in Sources */,
+				923658CC195EEE64008CDC77 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
