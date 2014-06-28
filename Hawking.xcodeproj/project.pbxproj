@@ -16,7 +16,6 @@
 		B36E82D5195EE985005F57B9 /* GrabberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E82D4195EE985005F57B9 /* GrabberTests.swift */; };
 		B36E82D8195EE985005F57B9 /* Grabber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36E82C3195EE985005F57B9 /* Grabber.framework */; };
 		B36E82D9195EE985005F57B9 /* Grabber.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B36E82C3195EE985005F57B9 /* Grabber.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		B36E82E4195EED2D005F57B9 /* readme2.md in Sources */ = {isa = PBXBuildFile; fileRef = B36E82E3195EED2D005F57B9 /* readme2.md */; };
 		B37C7893195EEFDA00490BEC /* Grabber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37C7892195EEFDA00490BEC /* Grabber.swift */; };
 		B37C7895195EFBA900490BEC /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37C7894195EFBA900490BEC /* ArticleModel.swift */; };
 		B37C7897195EFBB400490BEC /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37C7896195EFBB400490BEC /* ItemModel.swift */; };
@@ -126,6 +125,7 @@
 		B37C7892195EEFDA00490BEC /* Grabber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grabber.swift; sourceTree = "<group>"; };
 		B37C7894195EFBA900490BEC /* ArticleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
 		B37C7896195EFBB400490BEC /* ItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		B3D6A757195F29EB007D4DD3 /* pg.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = pg.playground; path = Grabber/pg.playground; sourceTree = "<group>"; };
 		B5DD11BE195F10780027A02F /* Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		B5DD11C1195F14940027A02F /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Article.swift; path = Hawking/Article.swift; sourceTree = "<group>"; };
 		DA9626E1032D4DF994631733 /* Pods-grabber.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grabber.xcconfig"; path = "Pods/Pods-grabber.xcconfig"; sourceTree = "<group>"; };
@@ -178,9 +178,10 @@
 		920E2EC6195ED92400BBF13A = {
 			isa = PBXGroup;
 			children = (
+				B3D6A757195F29EB007D4DD3 /* pg.playground */,
+				B36E82E3195EED2D005F57B9 /* readme2.md */,
 				B5DD11BD195F102D0027A02F /* Models */,
 				B5DD11BC195F10210027A02F /* DataLayer */,
-				B36E82E3195EED2D005F57B9 /* readme2.md */,
 				920E2ED1195ED92400BBF13A /* Hawking */,
 				920E2EDF195ED92400BBF13A /* HawkingTests */,
 				B36E82C4195EE985005F57B9 /* Grabber */,
@@ -512,7 +513,6 @@
 			files = (
 				B5DD11C2195F14940027A02F /* Article.swift in Sources */,
 				920E2ED5195ED92400BBF13A /* AppDelegate.swift in Sources */,
-				B36E82E4195EED2D005F57B9 /* readme2.md in Sources */,
 				B5DD11BF195F10780027A02F /* Source.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

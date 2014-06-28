@@ -21,11 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
 
-        Grabber()._loadData("http://ya.ru",
-            success: {data in
-                println(data)
-            }, failure: { error in
-                print(error)
+        Grabber().grabArticle(url: "https://schani.wordpress.com/tag/swift/", success: {article in
+                println(article)
+            }, failure: {error in
+                println(error)
             })
         
         return true
