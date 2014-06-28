@@ -112,7 +112,7 @@
 		0306C221195F523E005CE6C9 /* Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		0306C224195F526D005CE6C9 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		0306C227195F5312005CE6C9 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
-		03A12DD9195EFB3A009D3D8F /* Grabber-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Grabber-Bridging-Header.h"; sourceTree = "<group>"; };
+		03A12DD9195EFB3A009D3D8F /* Grabber-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Grabber-Bridging-Header.h"; path = "Grabber/Grabber-Bridging-Header.h"; sourceTree = "<group>"; };
 		39DFE9CE813D48509675A780 /* libPods-grabber.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-grabber.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5335B853CC8B412282997A19 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		920E2ECF195ED92400BBF13A /* Hawking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hawking.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,15 +124,15 @@
 		920E2EE2195ED92400BBF13A /* HawkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HawkingTests.swift; sourceTree = "<group>"; };
 		B36E82C3195EE985005F57B9 /* Grabber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Grabber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36E82C6195EE985005F57B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B36E82C7195EE985005F57B9 /* Grabber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Grabber.h; sourceTree = "<group>"; };
+		B36E82C7195EE985005F57B9 /* Grabber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Grabber.h; path = Grabber/Grabber.h; sourceTree = "<group>"; };
 		B36E82CD195EE985005F57B9 /* GrabberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrabberTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36E82D3195EE985005F57B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B36E82D4195EE985005F57B9 /* GrabberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrabberTests.swift; sourceTree = "<group>"; };
 		B36E82E3195EED2D005F57B9 /* readme2.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme2.md; sourceTree = "<group>"; };
-		B37C7892195EEFDA00490BEC /* Grabber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grabber.swift; sourceTree = "<group>"; };
-		B37C7894195EFBA900490BEC /* ArticleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
-		B37C7896195EFBB400490BEC /* ItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
-		DA9626E1032D4DF994631733 /* Pods-grabber.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grabber.xcconfig"; path = "Pods/Pods-grabber.xcconfig"; sourceTree = "<group>"; };
+		B37C7892195EEFDA00490BEC /* Grabber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Grabber.swift; path = Grabber/Grabber.swift; sourceTree = "<group>"; };
+		B37C7894195EFBA900490BEC /* ArticleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleModel.swift; path = Grabber/ArticleModel.swift; sourceTree = "<group>"; };
+		B37C7896195EFBB400490BEC /* ItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemModel.swift; path = Grabber/ItemModel.swift; sourceTree = "<group>"; };
+		DA9626E1032D4DF994631733 /* Pods-grabber.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grabber.xcconfig"; path = "../Pods/Pods-grabber.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,8 +201,11 @@
 				0306C21E195F5201005CE6C9 /* DTOModels */,
 				0306C223195F525F005CE6C9 /* DataManager */,
 				0306C226195F5301005CE6C9 /* Cache */,
+				B37C7894195EFBA900490BEC /* ArticleModel.swift */,
+				B37C7896195EFBB400490BEC /* ItemModel.swift */,
 			);
 			name = Model;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		0306C22D195F59C3005CE6C9 /* View */ = {
@@ -210,17 +213,18 @@
 			children = (
 			);
 			name = View;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		0306C22E195F59CE005CE6C9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B36E82C4195EE985005F57B9 /* Grabber */,
-				B36E82D1195EE985005F57B9 /* GrabberTests */,
-				920E2ED1195ED92400BBF13A /* Hawking */,
-				920E2EDF195ED92400BBF13A /* HawkingTests */,
+				B36E82C7195EE985005F57B9 /* Grabber.h */,
+				03A12DD9195EFB3A009D3D8F /* Grabber-Bridging-Header.h */,
+				B37C7892195EEFDA00490BEC /* Grabber.swift */,
 			);
 			name = Controller;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		0C9B6C3F73BD4CD997F18567 /* Frameworks */ = {
@@ -235,12 +239,12 @@
 		920E2EC6195ED92400BBF13A = {
 			isa = PBXGroup;
 			children = (
-				0306C22C195F599E005CE6C9 /* Model */,
-				0306C22D195F59C3005CE6C9 /* View */,
-				0306C22E195F59CE005CE6C9 /* Controller */,
+				920E2ED1195ED92400BBF13A /* Hawking */,
+				920E2EDF195ED92400BBF13A /* HawkingTests */,
+				B36E82C4195EE985005F57B9 /* Grabber */,
+				B36E82D1195EE985005F57B9 /* GrabberTests */,
 				920E2ED0195ED92400BBF13A /* Products */,
 				0C9B6C3F73BD4CD997F18567 /* Frameworks */,
-				DA9626E1032D4DF994631733 /* Pods-grabber.xcconfig */,
 				B36E82E3195EED2D005F57B9 /* readme2.md */,
 			);
 			sourceTree = "<group>";
@@ -294,12 +298,10 @@
 		B36E82C4195EE985005F57B9 /* Grabber */ = {
 			isa = PBXGroup;
 			children = (
+				0306C22C195F599E005CE6C9 /* Model */,
+				0306C22D195F59C3005CE6C9 /* View */,
+				0306C22E195F59CE005CE6C9 /* Controller */,
 				B36E82C5195EE985005F57B9 /* Supporting Files */,
-				B36E82C7195EE985005F57B9 /* Grabber.h */,
-				03A12DD9195EFB3A009D3D8F /* Grabber-Bridging-Header.h */,
-				B37C7892195EEFDA00490BEC /* Grabber.swift */,
-				B37C7894195EFBA900490BEC /* ArticleModel.swift */,
-				B37C7896195EFBB400490BEC /* ItemModel.swift */,
 			);
 			path = Grabber;
 			sourceTree = "<group>";
@@ -308,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				B36E82C6195EE985005F57B9 /* Info.plist */,
+				DA9626E1032D4DF994631733 /* Pods-grabber.xcconfig */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
