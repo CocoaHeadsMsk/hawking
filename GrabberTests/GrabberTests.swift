@@ -9,27 +9,42 @@
 import XCTest
 
 class GrabberTests: XCTestCase {
+  
+  let listGrabTestURL = "http://habrahabr.ru"
+  let articleGrabTestURL = "http://habrahabr.ru/post/227911/"
+  
+  var grabber: Grabber?
+  
+  override func setUp() {
+    super.setUp()
+    grabber = Grabber()
+  }
+  
+  override func tearDown() {
+    super.tearDown()
+  }
+  
+  func testList() {
+    XCTAssert(grabber.GrabList(url: listGrabTestURL, success: {list as
+      
+      }, failure: {error in
+        
+      }), "Invalid grab list")
+  }
+  
+  func testArticle() {
+    XCTAssert(grabber.GrabArticle(url: articleGrabTestURL, success:{article in
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+      } failure: {err in
+        
+      }), "Invalid grab article")
+  }
+  
+  func testPerformanceExample() {
+    // This is an example of a performance test case.
+    self.measureBlock() {
+        // Put the code you want to measure the time of here.
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
+  }
     
 }
