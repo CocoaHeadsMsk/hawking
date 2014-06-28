@@ -10,7 +10,7 @@ import Foundation
 
 class Grabber {
     
-    func _loadData(url: String, success: (data: String) -> Void, failure: (error: NSError) -> Void) {
+    func loadData(url: String, success: (data: String) -> Void, failure: (error: NSError) -> Void) {
         let manager = AFHTTPRequestOperationManager()
         manager.responseSerializer = AFHTTPResponseSerializer()
         manager.GET(url,
@@ -23,21 +23,30 @@ class Grabber {
             })
     }
     
-    func grabList(#url: String, success: (a:Array<ItemModel>) -> Void, failure: (err:NSError) -> Void) {
+    func grabList(#url: String, success: (a:Array<AnyObject>) -> Void, failure: (err:NSError) -> Void) {
         if let listUrl = NSURL.URLWithString(url) {
-            
+            let manager = AFHTTPRequestOperationManager()
+            manager.requestSerializer = AFHTTPRequestSerializer()
+            manager.GET( "http://graph.facebook.com",
+                parameters: nil,
+                success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                    println("JSON: " + responseObject.description)
+                },
+                failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                    println("Error: " + error.localizedDescription)
+                })
         }
     }
     
-    func grabList(#content: String, success: (a:Array<ItemModel>), failure: (err:NSError) -> Void) {
+    func grabList(#txt: String, success: (a:Array<AnyObject>) -> Void, failure: (err:NSError) -> Void) {
         
     }
     
-    func grabArticle(#url: String, success: (article: ArticleModel) -> Void, failure: (error: NSError) -> Void) -> Bool {
+    func grabArticle(#url: String, success: (article: ArticleModel), failure: (error: NSError)) -> Bool {
         return false
     }
     
-    func grabArticle(#content: String, success: (article: ArticleModel) -> Void, failure: (error: NSError) -> Void) -> Bool {
+    func grabArticle(#text: String, success: (article: ArticleModel), failure: (error: NSError)) -> Bool {
         return false
     }
 }
