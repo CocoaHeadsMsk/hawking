@@ -15,7 +15,7 @@ class Cache {
     }
     
     func grubArticleFromCache(){
-    
+        
     }
     
     
