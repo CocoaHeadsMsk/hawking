@@ -21,11 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
 
-        Grabber().loadData("ya.ru",
+        Grabber().loadData("http://ya.ru",
             success: {data in
-                
+                println(data)
             }, failure: { error in
-                
+                print(error)
             })
         
         return true

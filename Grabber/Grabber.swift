@@ -10,15 +10,16 @@ import Foundation
 
 class Grabber {
     
-    func loadData(url String, success: (data: String), failure: (error: NSError)) {
+    func loadData(url: String, success: (data: String) -> Void, failure: (error: NSError) -> Void) {
         let manager = AFHTTPRequestOperationManager()
+        manager.responseSerializer = AFHTTPResponseSerializer()
         manager.GET(url,
             parameters: nil,
-            success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-                success(operation.responseString)
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                success(data: operation.responseString)
             },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
-                failure(error)
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                failure(error: error)
             })
     }
 
