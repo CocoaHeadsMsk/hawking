@@ -8,10 +8,9 @@
 
 import Foundation
 
-
 class Grabber {
     
-    func loadData(url: String, success: (data: String) -> Void, failure: (error: NSError) -> Void) {
+    func _loadData(url: String, success: (data: String) -> Void, failure: (error: NSError) -> Void) {
         let manager = AFHTTPRequestOperationManager()
         manager.responseSerializer = AFHTTPResponseSerializer()
         manager.requestSerializer.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10) AppleWebKit/538.39.41 (KHTML, like Gecko) Version/8.0 Safari/538.39.41", forHTTPHeaderField: "User-Agent")
@@ -25,7 +24,6 @@ class Grabber {
             })
     }
     
-<<<<<<< HEAD
     func grabList(#url: String, success: (a: Array<AnyObject>) -> Void, failure: (error: NSError) -> Void) -> Void {
         self._loadData(url,
             success: { data in
@@ -48,32 +46,21 @@ class Grabber {
     }
     
     func parseList(domTree: Array<AnyObject>) {
-=======
-    func grabList(#url: String, success: (a:Array<AnyObject>) -> Void, failure: (err:NSError) -> Void) {
-        if let listUrl = NSURL.URLWithString(url) {
-            let manager = AFHTTPRequestOperationManager()
-            manager.requestSerializer = AFHTTPRequestSerializer()
-            manager.GET( "http://graph.facebook.com",
-                parameters: nil,
-                success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-                    println("JSON: " + responseObject.description)
-                },
-                failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
-                    println("Error: " + error.localizedDescription)
-                })
-        }
-    }
-    
-    func grabList(#txt: String, success: (a:Array<AnyObject>) -> Void, failure: (err:NSError) -> Void) {
->>>>>>> FETCH_HEAD
         
     }
     
-    func grabArticle(#url: String, success: (article: ArticleModel), failure: (error: NSError)) -> Bool {
-        return false
+    ////////////////////////////////////////////////////////////////////////////
+    // MARK: – Articles grabber
+    ////////////////////////////////////////////////////////////////////////////
+    
+    func grabArticle(#url: String, success: (article: ArticleModel) -> Void, failure: (error: NSError) -> Void) {
+        self._loadData(url,
+            success: {data in
+                self.grabArticle(text: data, success: success, failure: failure)
+            }, failure: failure)
     }
     
-    func grabArticle(#text: String, success: (article: ArticleModel), failure: (error: NSError)) -> Bool {
-        return false
+    func grabArticle(#text: String, success: (article: ArticleModel) -> Void, failure: (error: NSError) -> Void) {
+        
     }
 }
