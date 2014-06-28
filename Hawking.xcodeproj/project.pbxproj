@@ -195,6 +195,34 @@
 			name = Cache;
 			sourceTree = "<group>";
 		};
+		0306C22C195F599E005CE6C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0306C21E195F5201005CE6C9 /* DTOModels */,
+				0306C223195F525F005CE6C9 /* DataManager */,
+				0306C226195F5301005CE6C9 /* Cache */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0306C22D195F59C3005CE6C9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0306C22E195F59CE005CE6C9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B36E82C4195EE985005F57B9 /* Grabber */,
+				B36E82D1195EE985005F57B9 /* GrabberTests */,
+				920E2ED1195ED92400BBF13A /* Hawking */,
+				920E2EDF195ED92400BBF13A /* HawkingTests */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		0C9B6C3F73BD4CD997F18567 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,18 +235,13 @@
 		920E2EC6195ED92400BBF13A = {
 			isa = PBXGroup;
 			children = (
-				B5E99DA1195F4BB30045AC07 /* Adviser */,
-				0306C21E195F5201005CE6C9 /* DTOModels */,
-				0306C223195F525F005CE6C9 /* DataManager */,
-				0306C226195F5301005CE6C9 /* Cache */,
-				B36E82E3195EED2D005F57B9 /* readme2.md */,
-				920E2ED1195ED92400BBF13A /* Hawking */,
-				920E2EDF195ED92400BBF13A /* HawkingTests */,
-				B36E82C4195EE985005F57B9 /* Grabber */,
-				B36E82D1195EE985005F57B9 /* GrabberTests */,
+				0306C22C195F599E005CE6C9 /* Model */,
+				0306C22D195F59C3005CE6C9 /* View */,
+				0306C22E195F59CE005CE6C9 /* Controller */,
 				920E2ED0195ED92400BBF13A /* Products */,
 				0C9B6C3F73BD4CD997F18567 /* Frameworks */,
 				DA9626E1032D4DF994631733 /* Pods-grabber.xcconfig */,
+				B36E82E3195EED2D005F57B9 /* readme2.md */,
 			);
 			sourceTree = "<group>";
 		};

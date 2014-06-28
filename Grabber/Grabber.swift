@@ -39,7 +39,7 @@ class Grabber {
         
         if let domTree: Array = aHpple.searchWithXPathQuery("//body") {
             let qw = domTree[0] as TFHppleElement
-            println(qw)
+//            println(qw)
         }
 //        self.parseList(domTree)
         success(a: [])
