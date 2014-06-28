@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 class Grabber {
     
     func loadData(url: String, success: (data: String) -> Void, failure: (error: NSError) -> Void) {

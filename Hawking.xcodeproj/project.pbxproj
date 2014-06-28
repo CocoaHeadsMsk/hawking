@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03A12DDA195EFB3A009D3D8F /* Grabber-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 03A12DD9195EFB3A009D3D8F /* Grabber-Bridging-Header.h */; };
+		1451E877195F208500E214D8 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451E876195F208500E214D8 /* Cache.swift */; };
 		920E2ED5195ED92400BBF13A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E2ED4195ED92400BBF13A /* AppDelegate.swift */; };
 		920E2ED7195ED92400BBF13A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 920E2ED6195ED92400BBF13A /* Images.xcassets */; };
 		920E2EE3195ED92400BBF13A /* HawkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E2EE2195ED92400BBF13A /* HawkingTests.swift */; };
@@ -105,6 +106,7 @@
 
 /* Begin PBXFileReference section */
 		03A12DD9195EFB3A009D3D8F /* Grabber-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Grabber-Bridging-Header.h"; sourceTree = "<group>"; };
+		1451E876195F208500E214D8 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cache.swift; path = Cache/Cache.swift; sourceTree = "<group>"; };
 		39DFE9CE813D48509675A780 /* libPods-grabber.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-grabber.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5335B853CC8B412282997A19 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		920E2ECF195ED92400BBF13A /* Hawking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hawking.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,9 +173,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1451E873195F1BB200E214D8 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				1451E876195F208500E214D8 /* Cache.swift */,
+			);
+			name = Cache;
+			sourceTree = "<group>";
+		};
 		920E2EC6195ED92400BBF13A = {
 			isa = PBXGroup;
 			children = (
+				1451E873195F1BB200E214D8 /* Cache */,
 				B36E82E3195EED2D005F57B9 /* readme2.md */,
 				920E2ED1195ED92400BBF13A /* Hawking */,
 				920E2EDF195ED92400BBF13A /* HawkingTests */,
@@ -481,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				920E2ED5195ED92400BBF13A /* AppDelegate.swift in Sources */,
+				1451E877195F208500E214D8 /* Cache.swift in Sources */,
 				B36E82E4195EED2D005F57B9 /* readme2.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
