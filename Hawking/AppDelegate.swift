@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         setTabBarImages(nVC2.tabBarItem, firstImageName: "FaveTabS", secondImageName: "FaveTab")
         nVC2.title = "Fave"
         
-        let settingsVC = LentViewController(nibName: "LentViewController", bundle: nil)
+        let settingsVC = SettingsViewController(nibName: "SettingsViewController", bundle: nil)
         let nVC3 = UINavigationController(rootViewController: settingsVC)
         setTabBarImages(nVC3.tabBarItem, firstImageName: "SettingsTabS", secondImageName: "SettingsTab")
         nVC3.title = "Settings"

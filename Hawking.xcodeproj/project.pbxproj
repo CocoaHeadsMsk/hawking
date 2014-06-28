@@ -14,6 +14,8 @@
 		92268C26195EEF0D00B3AB97 /* LentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92268C24195EEF0D00B3AB97 /* LentViewController.swift */; };
 		92268C27195EEF0D00B3AB97 /* LentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92268C25195EEF0D00B3AB97 /* LentViewController.xib */; };
 		923658CC195EEE64008CDC77 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923658CB195EEE64008CDC77 /* BaseViewController.swift */; };
+		925F8723195F2274008102E2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925F8721195F2274008102E2 /* SettingsViewController.swift */; };
+		925F8724195F2274008102E2 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 925F8722195F2274008102E2 /* SettingsViewController.xib */; };
 		926A8F96195EFF9E00463ECA /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926A8F95195EFF9E00463ECA /* StringExtensions.swift */; };
 		926A8F98195F05FE00463ECA /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926A8F97195F05FE00463ECA /* BaseNavigationController.swift */; };
 		929B60E7195EF1DF006515D2 /* LentFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929B60E5195EF1DF006515D2 /* LentFeedCell.swift */; };
@@ -119,6 +121,8 @@
 		92268C24195EEF0D00B3AB97 /* LentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LentViewController.swift; path = ViewControllers/LentVC/LentViewController.swift; sourceTree = "<group>"; };
 		92268C25195EEF0D00B3AB97 /* LentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LentViewController.xib; path = ViewControllers/LentVC/LentViewController.xib; sourceTree = "<group>"; };
 		923658CB195EEE64008CDC77 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewControllers/Utility/BaseViewController.swift; sourceTree = "<group>"; };
+		925F8721195F2274008102E2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewControllers/SettingsVC/SettingsViewController.swift; sourceTree = "<group>"; };
+		925F8722195F2274008102E2 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = ViewControllers/SettingsVC/SettingsViewController.xib; sourceTree = "<group>"; };
 		926A8F95195EFF9E00463ECA /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Extensions/String/StringExtensions.swift; sourceTree = "<group>"; };
 		926A8F97195F05FE00463ECA /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseNavigationController.swift; path = ViewControllers/Utility/BaseNavigationController.swift; sourceTree = "<group>"; };
 		929B60E5195EF1DF006515D2 /* LentFeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LentFeedCell.swift; path = ViewControllers/LentVC/Cells/LentFeedCell.swift; sourceTree = "<group>"; };
@@ -250,20 +254,21 @@
 		923658C8195EEE1D008CDC77 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				92DD8095195F1E8B003AD053 /* SettingsViewController */,
+				923658C9195EEE2F008CDC77 /* LentViewController */,
 				923658CA195EEE42008CDC77 /* Utility */,
-				923658C9195EEE2F008CDC77 /* LentViewCtontroller */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		923658C9195EEE2F008CDC77 /* LentViewCtontroller */ = {
+		923658C9195EEE2F008CDC77 /* LentViewController */ = {
 			isa = PBXGroup;
 			children = (
 				92268C29195EF19800B3AB97 /* Cells */,
 				92268C24195EEF0D00B3AB97 /* LentViewController.swift */,
 				92268C25195EEF0D00B3AB97 /* LentViewController.xib */,
 			);
-			name = LentViewCtontroller;
+			name = LentViewController;
 			sourceTree = "<group>";
 		};
 		923658CA195EEE42008CDC77 /* Utility */ = {
@@ -307,6 +312,15 @@
 				92D3E556195F181200076EDC /* UIImageExtensions.swift */,
 			);
 			name = UIImage;
+			sourceTree = "<group>";
+		};
+		92DD8095195F1E8B003AD053 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				925F8721195F2274008102E2 /* SettingsViewController.swift */,
+				925F8722195F2274008102E2 /* SettingsViewController.xib */,
+			);
+			name = SettingsViewController;
 			sourceTree = "<group>";
 		};
 		B319DF3A195EDA34008E9B9C /* Parser */ = {
@@ -472,6 +486,7 @@
 				929B60EA195EFE59006515D2 /* breakingnews1.jpg in Resources */,
 				92268C27195EEF0D00B3AB97 /* LentViewController.xib in Resources */,
 				929B60E8195EF1DF006515D2 /* LentFeedCell.xib in Resources */,
+				925F8724195F2274008102E2 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +582,7 @@
 				926A8F96195EFF9E00463ECA /* StringExtensions.swift in Sources */,
 				920E2ED5195ED92400BBF13A /* AppDelegate.swift in Sources */,
 				923658CC195EEE64008CDC77 /* BaseViewController.swift in Sources */,
+				925F8723195F2274008102E2 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
