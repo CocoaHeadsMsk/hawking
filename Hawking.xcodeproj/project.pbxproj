@@ -10,6 +10,7 @@
 		0306C220195F5210005CE6C9 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306C21F195F5210005CE6C9 /* Article.swift */; };
 		0306C222195F523E005CE6C9 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306C221195F523E005CE6C9 /* Source.swift */; };
 		0306C225195F526D005CE6C9 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306C224195F526D005CE6C9 /* DataManager.swift */; };
+		0306C228195F5312005CE6C9 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306C227195F5312005CE6C9 /* Cache.swift */; };
 		03A12DDA195EFB3A009D3D8F /* Grabber-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 03A12DD9195EFB3A009D3D8F /* Grabber-Bridging-Header.h */; };
 		920E2ED5195ED92400BBF13A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E2ED4195ED92400BBF13A /* AppDelegate.swift */; };
 		920E2ED7195ED92400BBF13A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 920E2ED6195ED92400BBF13A /* Images.xcassets */; };
@@ -110,6 +111,7 @@
 		0306C21F195F5210005CE6C9 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		0306C221195F523E005CE6C9 /* Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		0306C224195F526D005CE6C9 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		0306C227195F5312005CE6C9 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		03A12DD9195EFB3A009D3D8F /* Grabber-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Grabber-Bridging-Header.h"; sourceTree = "<group>"; };
 		39DFE9CE813D48509675A780 /* libPods-grabber.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-grabber.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5335B853CC8B412282997A19 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +187,14 @@
 			name = DataManager;
 			sourceTree = "<group>";
 		};
+		0306C226195F5301005CE6C9 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				0306C227195F5312005CE6C9 /* Cache.swift */,
+			);
+			name = Cache;
+			sourceTree = "<group>";
+		};
 		0C9B6C3F73BD4CD997F18567 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +209,7 @@
 			children = (
 				0306C21E195F5201005CE6C9 /* DTOModels */,
 				0306C223195F525F005CE6C9 /* DataManager */,
+				0306C226195F5301005CE6C9 /* Cache */,
 				B36E82E3195EED2D005F57B9 /* readme2.md */,
 				920E2ED1195ED92400BBF13A /* Hawking */,
 				920E2EDF195ED92400BBF13A /* HawkingTests */,
@@ -527,6 +538,7 @@
 			files = (
 				B37C7897195EFBB400490BEC /* ItemModel.swift in Sources */,
 				B37C7895195EFBA900490BEC /* ArticleModel.swift in Sources */,
+				0306C228195F5312005CE6C9 /* Cache.swift in Sources */,
 				B37C7893195EEFDA00490BEC /* Grabber.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
