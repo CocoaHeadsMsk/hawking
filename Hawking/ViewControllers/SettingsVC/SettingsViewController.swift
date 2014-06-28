@@ -52,7 +52,7 @@ class SettingsViewController: BaseViewController, UITableViewDataSource, UITable
     }
 
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        var sectionType: SettingSections = sections[section]
+        let sectionType = sections[section]
         
         switch (sectionType) {
         case .ArticleControll:
@@ -65,7 +65,47 @@ class SettingsViewController: BaseViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        return UITableViewCell()
+        let identifier = "SettingsCell"
+        let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: identifier)
+        
+        fillCell(cell, forIndexPath: indexPath)
+        
+        return cell
+    }
+    
+    func fillCell(cell: UITableViewCell, forIndexPath indexPath: NSIndexPath) {
+        let sectionType = sections[indexPath.section];
+        
+        if (sectionType == .ArticleControll) {
+            let articleControllCellType = articleControllCells[indexPath.row]
+            
+            if (articleControllCellType == .ArticleControllAdd) {
+                cell.textLabel.text = "Add source"
+            } else if (articleControllCellType == .ArticleControllSugestions) {
+                cell.textLabel.text = "Suggestions"
+            }
+            
+            cell.textLabel.textColor = UIColor.mainColor()
+            
+        } else if (sectionType == .AboutProgramm) {
+            let aboutProgrammCellType = aboutProgrammCells[indexPath.row]
+            
+            if (aboutProgrammCellType == .AboutProgrammInfo) {
+                cell.textLabel.text = "About programm"
+                cell.textLabel.textColor = UIColor.mainColor()
+            } else if (aboutProgrammCellType == .AboutProgrammMailUs) {
+                cell.textLabel.text = "Mail us"
+                cell.textLabel.textColor = UIColor.mainColor()
+            } else if (aboutProgrammCellType == .AboutProgrammVersion) {
+                cell.textLabel.text = "Version"
+                cell.detailTextLabel.text = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleVersion") as String
+                cell.selectionStyle = UITableViewCellSelectionStyle.None
+            }
+        }
+    }
+    
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
 }

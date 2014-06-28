@@ -1,5 +1,7 @@
-link_with ['Parser']
-
 platform :ios, '7.0'
-pod 'AFNetworking', '~> 2.1'
 
+target :project do
+    link_with 'Hawking'
+    
+    pod 'MSCMoreOptionTableViewCell', '~> 1.1'
+end
