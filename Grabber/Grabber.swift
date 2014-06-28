@@ -30,6 +30,10 @@ class Grabber {
             })
     }
     
+    ////////////////////////////////////////////////////////////////////////////
+    // MARK: – Grab List
+    ////////////////////////////////////////////////////////////////////////////
+
     func grabList(#url: String, success: (a: Array<AnyObject>) -> Void, failure: (error: NSError) -> Void) -> Void {
         self._loadData(url,
             success: { data in
@@ -44,15 +48,36 @@ class Grabber {
         let aHpple = TFHpple.hppleWithHTMLData(htmlData)
         
         if let domTree: Array = aHpple.searchWithXPathQuery("//body") {
-            let qw = domTree[0] as TFHppleElement
+            if domTree.count > 0 {
+                self.parseList(domTree)
+            }
+//            let qw = domTree[0] as TFHppleElement
 //            println(qw)
         }
-//        self.parseList(domTree)
         success(a: [])
     }
     
     func parseList(domTree: Array<AnyObject>) {
-        
+        self.each(domTree[0] as TFHppleElement, level: 0, { level, el in
+            
+            if let tag = el.tagName {
+                switch tag {
+//                case "item":
+//                    println(el.raw)
+                case "title":
+                    println(el.content)
+                case "link":
+                    println(el.attributes)
+                case "description":
+                    println(el.raw)
+                default:
+//                    println(el.raw)
+                    break
+                }
+            }
+            
+            return true
+        })
     }
     
     ////////////////////////////////////////////////////////////////////////////
@@ -86,7 +111,7 @@ class Grabber {
                         fallthrough
                     case "pre":
                         fallthrough
-                    case "code":
+                    case "p", "pre", "code":
 //                        print(" @@@@-> ")
 //                        print(self.pathFor(el))
 //                        print(" -> ")
