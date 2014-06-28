@@ -13,14 +13,16 @@ class Article {
     let Text:String
     let ImagePath : Array<NSURL>
     let Id : Int
+    let URL: NSURL
     var _Price: Int
     
-    init(Title title:String, atricleText text:String, imagePaths:Array<NSURL>, id:Int , price:Int){
+    init(Title title:String, atricleText text:String, imagePaths:Array<NSURL>, id:Int , price:Int, url: NSURL){
         self.Title = title
         self.Text = text
         self.ImagePath = imagePaths
         self.Id = id
         self._Price = price
+        self.URL=url
     }
     
     func incrementArticlePrice(){
