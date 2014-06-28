@@ -1,0 +1,392 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		920E2ED5195ED92400BBF13A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E2ED4195ED92400BBF13A /* AppDelegate.swift */; };
+		920E2ED7195ED92400BBF13A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 920E2ED6195ED92400BBF13A /* Images.xcassets */; };
+		920E2EE3195ED92400BBF13A /* HawkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E2EE2195ED92400BBF13A /* HawkingTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		920E2EDD195ED92400BBF13A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 920E2EC7195ED92400BBF13A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 920E2ECE195ED92400BBF13A;
+			remoteInfo = Hawking;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		920E2ECF195ED92400BBF13A /* Hawking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hawking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		920E2ED3195ED92400BBF13A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		920E2ED4195ED92400BBF13A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		920E2ED6195ED92400BBF13A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		920E2EDC195ED92400BBF13A /* HawkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HawkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		920E2EE1195ED92400BBF13A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		920E2EE2195ED92400BBF13A /* HawkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HawkingTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		920E2ECC195ED92400BBF13A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		920E2ED9195ED92400BBF13A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		920E2EC6195ED92400BBF13A = {
+			isa = PBXGroup;
+			children = (
+				920E2ED1195ED92400BBF13A /* Hawking */,
+				920E2EDF195ED92400BBF13A /* HawkingTests */,
+				920E2ED0195ED92400BBF13A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		920E2ED0195ED92400BBF13A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				920E2ECF195ED92400BBF13A /* Hawking.app */,
+				920E2EDC195ED92400BBF13A /* HawkingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		920E2ED1195ED92400BBF13A /* Hawking */ = {
+			isa = PBXGroup;
+			children = (
+				920E2ED4195ED92400BBF13A /* AppDelegate.swift */,
+				920E2ED6195ED92400BBF13A /* Images.xcassets */,
+				920E2ED2195ED92400BBF13A /* Supporting Files */,
+			);
+			path = Hawking;
+			sourceTree = "<group>";
+		};
+		920E2ED2195ED92400BBF13A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				920E2ED3195ED92400BBF13A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		920E2EDF195ED92400BBF13A /* HawkingTests */ = {
+			isa = PBXGroup;
+			children = (
+				920E2EE2195ED92400BBF13A /* HawkingTests.swift */,
+				920E2EE0195ED92400BBF13A /* Supporting Files */,
+			);
+			path = HawkingTests;
+			sourceTree = "<group>";
+		};
+		920E2EE0195ED92400BBF13A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				920E2EE1195ED92400BBF13A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		920E2ECE195ED92400BBF13A /* Hawking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 920E2EE6195ED92400BBF13A /* Build configuration list for PBXNativeTarget "Hawking" */;
+			buildPhases = (
+				920E2ECB195ED92400BBF13A /* Sources */,
+				920E2ECC195ED92400BBF13A /* Frameworks */,
+				920E2ECD195ED92400BBF13A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hawking;
+			productName = Hawking;
+			productReference = 920E2ECF195ED92400BBF13A /* Hawking.app */;
+			productType = "com.apple.product-type.application";
+		};
+		920E2EDB195ED92400BBF13A /* HawkingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 920E2EE9195ED92400BBF13A /* Build configuration list for PBXNativeTarget "HawkingTests" */;
+			buildPhases = (
+				920E2ED8195ED92400BBF13A /* Sources */,
+				920E2ED9195ED92400BBF13A /* Frameworks */,
+				920E2EDA195ED92400BBF13A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				920E2EDE195ED92400BBF13A /* PBXTargetDependency */,
+			);
+			name = HawkingTests;
+			productName = HawkingTests;
+			productReference = 920E2EDC195ED92400BBF13A /* HawkingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		920E2EC7195ED92400BBF13A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = CocoaHeadsMsk;
+				TargetAttributes = {
+					920E2ECE195ED92400BBF13A = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					920E2EDB195ED92400BBF13A = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 920E2ECE195ED92400BBF13A;
+					};
+				};
+			};
+			buildConfigurationList = 920E2ECA195ED92400BBF13A /* Build configuration list for PBXProject "Hawking" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 920E2EC6195ED92400BBF13A;
+			productRefGroup = 920E2ED0195ED92400BBF13A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				920E2ECE195ED92400BBF13A /* Hawking */,
+				920E2EDB195ED92400BBF13A /* HawkingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		920E2ECD195ED92400BBF13A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				920E2ED7195ED92400BBF13A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		920E2EDA195ED92400BBF13A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		920E2ECB195ED92400BBF13A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				920E2ED5195ED92400BBF13A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		920E2ED8195ED92400BBF13A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				920E2EE3195ED92400BBF13A /* HawkingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		920E2EDE195ED92400BBF13A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 920E2ECE195ED92400BBF13A /* Hawking */;
+			targetProxy = 920E2EDD195ED92400BBF13A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		920E2EE4195ED92400BBF13A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		920E2EE5195ED92400BBF13A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		920E2EE7195ED92400BBF13A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = Hawking/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		920E2EE8195ED92400BBF13A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = Hawking/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		920E2EEA195ED92400BBF13A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Hawking.app/Hawking";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HawkingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		920E2EEB195ED92400BBF13A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Hawking.app/Hawking";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HawkingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		920E2ECA195ED92400BBF13A /* Build configuration list for PBXProject "Hawking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				920E2EE4195ED92400BBF13A /* Debug */,
+				920E2EE5195ED92400BBF13A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		920E2EE6195ED92400BBF13A /* Build configuration list for PBXNativeTarget "Hawking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				920E2EE7195ED92400BBF13A /* Debug */,
+				920E2EE8195ED92400BBF13A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		920E2EE9195ED92400BBF13A /* Build configuration list for PBXNativeTarget "HawkingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				920E2EEA195ED92400BBF13A /* Debug */,
+				920E2EEB195ED92400BBF13A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 920E2EC7195ED92400BBF13A /* Project object */;
+}
