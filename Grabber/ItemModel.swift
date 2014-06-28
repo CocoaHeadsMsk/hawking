@@ -9,14 +9,11 @@
 import Foundation
 
 class ItemModel {
-    var title: String = ""
-    var publisher: String = ""
-    var date: NSDate?
-    var description: String = ""
-    var tags: Array<String>?
-    var images: Array<String>?
-
-    var sourceUrl: String = ""
+  var title: String = ""
+  var publisher: String = ""
+  var date: NSDate?
+  var description: String = ""
+  var tags: Array<String>?
   
-    init() {}
+  init() {}
 }

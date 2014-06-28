@@ -11,7 +11,7 @@ import Foundation
 
 class Grabber {
     
-    func _loadData(url: String, success: (data: String) -> Void, failure: (error: NSError) -> Void) {
+    func loadData(url: String, success: (data: String) -> Void, failure: (error: NSError) -> Void) {
         let manager = AFHTTPRequestOperationManager()
         manager.responseSerializer = AFHTTPResponseSerializer()
         manager.GET(url,
@@ -24,31 +24,30 @@ class Grabber {
             })
     }
     
-    func grabList(#url: String, success: (a:Array<AnyObject>) -> Void, failure: (error: NSError) -> Void) -> Void {
-        self._loadData(url,
-            success: { data in
-                self.grabList(txt: data, success: success, failure: failure)
-            },
-            failure: failure
-        )
+    func grabList(#url: String, success: (a:Array<AnyObject>) -> Void, failure: (err:NSError) -> Void) {
+        if let listUrl = NSURL.URLWithString(url) {
+            let manager = AFHTTPRequestOperationManager()
+            manager.requestSerializer = AFHTTPRequestSerializer()
+            manager.GET( "http://graph.facebook.com",
+                parameters: nil,
+                success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                    println("JSON: " + responseObject.description)
+                },
+                failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                    println("Error: " + error.localizedDescription)
+                })
+        }
     }
     
-    func grabList(#txt: String, success: (a:Array<AnyObject>) -> Void, failure: (error: NSError) -> Void) -> Void {
+    func grabList(#txt: String, success: (a:Array<AnyObject>) -> Void, failure: (err:NSError) -> Void) {
         
     }
     
-    ////////////////////////////////////////////////////////////////////////////
-    // MARK: – Articles grabber
-    ////////////////////////////////////////////////////////////////////////////
-    
-    func grabArticle(#url: String, success: (article: ArticleModel) -> Void, failure: (error: NSError) -> Void) {
-        self._loadData(url,
-            success: {data in
-                self.grabArticle(text: data, success: success, failure: failure)
-            }, failure: failure)
+    func grabArticle(#url: String, success: (article: ArticleModel), failure: (error: NSError)) -> Bool {
+        return false
     }
     
-    func grabArticle(#text: String, success: (article: ArticleModel) -> Void, failure: (error: NSError) -> Void) {
-        
+    func grabArticle(#text: String, success: (article: ArticleModel), failure: (error: NSError)) -> Bool {
+        return false
     }
 }
