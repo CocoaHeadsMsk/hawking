@@ -22,18 +22,26 @@ class GrabberTests: XCTestCase {
   
   override func tearDown() {
     super.tearDown()
-  }
-  
-  func testList() {
-    XCTAssert(grabber.GrabList(url: listGrabTestURL, success: {list as
-      
-      }, failure: {error in
-        
-      }), "Invalid grab list")
-  }
+    }
+    
+    func testList() {
+        XCTAssert(grabber.grabList(url: listGrabTestURL, success: {list as
+            
+            }, failure: {error in
+                
+            }), "Invalid grab list")
+    }
+    
+    func testContentList() {
+        XCTAssert(grabber.grabList(input: "sadasdsa", success: {list as
+            
+            }, failure: {error in
+                
+            }), "Invalid grab list")
+    }
   
   func testArticle() {
-    XCTAssert(grabber.GrabArticle(url: articleGrabTestURL, success:{article in
+    XCTAssert(grabber.grabArticle(url: articleGrabTestURL, success:{article in
     
       } failure: {err in
         

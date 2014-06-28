@@ -9,9 +9,20 @@
 import Foundation
 
 class Grabber {
-    func GrabList(input: String, success: (a:Array<AnyObject>), failure: (err:NSError)) -> Bool {
-        
-        
+    
+    func loadData(url String, success: (data: String), failure: (error: NSError)) {
+        let manager = AFHTTPRequestOperationManager()
+        manager.GET(url,
+            parameters: nil,
+            success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                success(operation.responseString)
+            },
+            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                failure(error)
+            })
+    }
+
+    func grabList(input: String, success: (a:Array<AnyObject>), failure: (err:NSError)) -> Bool {
         let manager = AFHTTPRequestOperationManager()
         manager.requestSerializer.setValue("608c6c08443c6d933576b90966b727358d0066b4", forHTTPHeaderField: "X-Auth-Token")
           
@@ -25,7 +36,9 @@ class Grabber {
                 })
             
 
-        
+        return false
+
+
         if input.hasPrefix("http") {
             grabNewsList(input, success: success, failure: failure)
         } else {
@@ -33,8 +46,8 @@ class Grabber {
         }
         
         
-//        success(a: <#Array<AnyObject>#>)
-//        failure(err: <#String#>)
+//        success(a: Array<AnyObject>)
+//        failure(err: String)
         
         
         return false
@@ -48,5 +61,13 @@ class Grabber {
     
     func grabNewsListContent(content: String, success: (a:Array<AnyObject>), failure: (err:NSError)) {
         
+    }
+    
+    func grabArticle(#url: String, success: (article: ArticleModel), failure: (error: NSError)) -> Bool {
+        return false
+    }
+    
+    func grabArticle(#text: String, success: (article: ArticleModel), failure: (error: NSError)) -> Bool {
+        return false
     }
 }
