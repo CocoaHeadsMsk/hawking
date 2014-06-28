@@ -1,5 +1,7 @@
-link_with ['Parser']
-
 platform :ios, '7.0'
-pod 'AFNetworking', '~> 2.1'
 
+target :parser do 
+  link_with 'Parser'
+
+  pod 'AFNetworking', '~> 2.1'
+end
