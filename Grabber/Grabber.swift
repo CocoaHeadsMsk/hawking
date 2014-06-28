@@ -23,7 +23,7 @@ class Grabber {
             })
     }
 
-    func grabList(input: String, success: (a:Array<AnyObject>), failure: (err:NSError)) -> Bool {
+    func grabList(input: String, success: (a:Array<AnyObject>) -> Void, failure: (err:NSError) -> Void) -> Bool {
         let manager = AFHTTPRequestOperationManager()
         manager.requestSerializer.setValue("608c6c08443c6d933576b90966b727358d0066b4", forHTTPHeaderField: "X-Auth-Token")
           
@@ -41,9 +41,9 @@ class Grabber {
 
 
         if input.hasPrefix("http") {
-            grabNewsList(input, success: success, failure: failure)
+            grabNewsList(url: input, success: success, failure: failure)
         } else {
-            grabNewsListContent(input, success: success, failure: failure)
+            grabNewsList(content: input, success: success, failure: failure)
         }
         
         
@@ -54,13 +54,13 @@ class Grabber {
         return false
     }
     
-    func grabNewsList(url: String, success: (a:Array<AnyObject>), failure: (err:NSError)) {
+    func grabNewsList(#url: String, success: (a:Array<AnyObject>) -> Void, failure: (err:NSError) -> Void) {
         if let listUrl = NSURL.URLWithString(url) {
             
         }
     }
     
-    func grabNewsListContent(content: String, success: (a:Array<AnyObject>), failure: (err:NSError)) {
+    func grabNewsList(#content: String, success: (a:Array<AnyObject>) -> Void, failure: (err:NSError) -> Void) {
         
     }
     
