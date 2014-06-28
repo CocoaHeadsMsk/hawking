@@ -30,5 +30,6 @@
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
+        <searchDisplayController id="gpc-QY-QYD"/>
     </objects>
 </document>

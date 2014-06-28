@@ -11,6 +11,7 @@ import UIKit
 class LentViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var tableView: UITableView
+    var isFave = false;
     
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -19,9 +20,11 @@ class LentViewController: BaseViewController, UITableViewDataSource, UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let identifier: String? = "LentFeedCell";
         self.tableView.registerNib(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier);
+        
+        title = (isFave) ? "Fave" : "Lent"
         // Do any additional setup after loading the view.
     }
 
@@ -49,6 +52,7 @@ class LentViewController: BaseViewController, UITableViewDataSource, UITableView
         } else {
             cell.fillContent(nil, title: "Title", text: "Some info, Some info")
         }
+        
         
         return cell
     }

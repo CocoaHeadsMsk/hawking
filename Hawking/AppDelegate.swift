@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
                             
     var window: UIWindow?
 
@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
+        
+        apperance();
         openStartLent();
         
         return true
@@ -47,17 +49,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func openStartLent() {
-        let lentVc = LentViewController(nibName: "LentViewController", bundle: nil);
-        let nVC = UINavigationController(rootViewController: lentVc);
+        let lentVc = LentViewController(nibName: "LentViewController", bundle: nil)
+        lentVc.isFave = false
+        let nVC = UINavigationController(rootViewController: lentVc)
+        setTabBarImages(nVC.tabBarItem, firstImageName: "LentTabS", secondImageName: "LentTab")
+        nVC.title = "Lent"
+        
+        let faveVC = LentViewController(nibName: "LentViewController", bundle: nil)
+        lentVc.isFave = true
+        let nVC2 = UINavigationController(rootViewController: faveVC)
+        setTabBarImages(nVC2.tabBarItem, firstImageName: "FaveTabS", secondImageName: "FaveTab")
+        nVC2.title = "Fave"
+        
+        let settingsVC = LentViewController(nibName: "LentViewController", bundle: nil)
+        let nVC3 = UINavigationController(rootViewController: settingsVC)
+        setTabBarImages(nVC3.tabBarItem, firstImageName: "SettingsTabS", secondImageName: "SettingsTab")
+        nVC3.title = "Settings"
         
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [nVC, nVC];
+        tabBarController.setViewControllers([nVC, nVC2, nVC3], animated: true)
         tabBarController.selectedIndex = 0
         
         self.window!.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
     }
-
+    
+    func setTabBarImages(tabBar: UITabBarItem, firstImageName: String, secondImageName: String) {
+        tabBar.setFinishedSelectedImage(UIImage(named: firstImageName).imageWithOverlayColor(UIColor.mainColor()), withFinishedUnselectedImage: (UIImage(named: secondImageName).imageWithOverlayColor(UIColor.lightGrayColor())))
+    }
+    
+    func apperance() {
+        UIBarButtonItem.appearance().tintColor = UIColor.mainColor()
+        
+        UINavigationBar.appearance().barTintColor = UIColor.mainColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()];
+        
+        UITabBar.appearance().tintColor = UIColor.mainColor()
+        UITabBar.appearance().selectedImageTintColor = UIColor.mainColor()
+    }
 
 }
+
 

@@ -53,10 +53,6 @@ class LentFeedCell: UITableViewCell {
         }
         
         if text {
-            
-            println(maxLength)
-            println(titleLength + text!.length)
-            
             if (titleLength + text!.length > maxLength) {
                
                 let toIndexInt = (titleLength > maxLength) ? 0 : maxLength - titleLength;
