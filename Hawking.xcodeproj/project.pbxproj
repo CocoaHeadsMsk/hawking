@@ -10,6 +10,9 @@
 		920E2ED5195ED92400BBF13A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E2ED4195ED92400BBF13A /* AppDelegate.swift */; };
 		920E2ED7195ED92400BBF13A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 920E2ED6195ED92400BBF13A /* Images.xcassets */; };
 		920E2EE3195ED92400BBF13A /* HawkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E2EE2195ED92400BBF13A /* HawkingTests.swift */; };
+		B319DF3C195EDA34008E9B9C /* Parser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B319DF3B195EDA34008E9B9C /* Parser.h */; };
+		B319DF3E195EDA34008E9B9C /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = B319DF3D195EDA34008E9B9C /* Parser.m */; };
+		B319DF44195EDA34008E9B9C /* libParser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B319DF39195EDA34008E9B9C /* libParser.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,7 +23,27 @@
 			remoteGlobalIDString = 920E2ECE195ED92400BBF13A;
 			remoteInfo = Hawking;
 		};
+		B319DF45195EDA34008E9B9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 920E2EC7195ED92400BBF13A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B319DF38195EDA34008E9B9C;
+			remoteInfo = Parser;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B319DF37195EDA34008E9B9C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				B319DF3C195EDA34008E9B9C /* Parser.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		920E2ECF195ED92400BBF13A /* Hawking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hawking.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,6 +53,11 @@
 		920E2EDC195ED92400BBF13A /* HawkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HawkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		920E2EE1195ED92400BBF13A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		920E2EE2195ED92400BBF13A /* HawkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HawkingTests.swift; sourceTree = "<group>"; };
+		B319DF39195EDA34008E9B9C /* libParser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libParser.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B319DF3B195EDA34008E9B9C /* Parser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		B319DF3D195EDA34008E9B9C /* Parser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
+		B319DF43195EDA34008E9B9C /* ParserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B319DF49195EDA34008E9B9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +75,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B319DF36195EDA34008E9B9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B319DF40195EDA34008E9B9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B319DF44195EDA34008E9B9C /* libParser.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,6 +98,8 @@
 			children = (
 				920E2ED1195ED92400BBF13A /* Hawking */,
 				920E2EDF195ED92400BBF13A /* HawkingTests */,
+				B319DF3A195EDA34008E9B9C /* Parser */,
+				B319DF47195EDA34008E9B9C /* ParserTests */,
 				920E2ED0195ED92400BBF13A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +109,8 @@
 			children = (
 				920E2ECF195ED92400BBF13A /* Hawking.app */,
 				920E2EDC195ED92400BBF13A /* HawkingTests.xctest */,
+				B319DF39195EDA34008E9B9C /* libParser.a */,
+				B319DF43195EDA34008E9B9C /* ParserTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +146,31 @@
 			isa = PBXGroup;
 			children = (
 				920E2EE1195ED92400BBF13A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B319DF3A195EDA34008E9B9C /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				B319DF3B195EDA34008E9B9C /* Parser.h */,
+				B319DF3D195EDA34008E9B9C /* Parser.m */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		B319DF47195EDA34008E9B9C /* ParserTests */ = {
+			isa = PBXGroup;
+			children = (
+				B319DF48195EDA34008E9B9C /* Supporting Files */,
+			);
+			path = ParserTests;
+			sourceTree = "<group>";
+		};
+		B319DF48195EDA34008E9B9C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B319DF49195EDA34008E9B9C /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -141,6 +213,41 @@
 			productReference = 920E2EDC195ED92400BBF13A /* HawkingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B319DF38195EDA34008E9B9C /* Parser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B319DF4E195EDA34008E9B9C /* Build configuration list for PBXNativeTarget "Parser" */;
+			buildPhases = (
+				B319DF35195EDA34008E9B9C /* Sources */,
+				B319DF36195EDA34008E9B9C /* Frameworks */,
+				B319DF37195EDA34008E9B9C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Parser;
+			productName = Parser;
+			productReference = B319DF39195EDA34008E9B9C /* libParser.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B319DF42195EDA34008E9B9C /* ParserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B319DF4F195EDA34008E9B9C /* Build configuration list for PBXNativeTarget "ParserTests" */;
+			buildPhases = (
+				B319DF3F195EDA34008E9B9C /* Sources */,
+				B319DF40195EDA34008E9B9C /* Frameworks */,
+				B319DF41195EDA34008E9B9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B319DF46195EDA34008E9B9C /* PBXTargetDependency */,
+			);
+			name = ParserTests;
+			productName = ParserTests;
+			productReference = B319DF43195EDA34008E9B9C /* ParserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -156,6 +263,13 @@
 					920E2EDB195ED92400BBF13A = {
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = 920E2ECE195ED92400BBF13A;
+					};
+					B319DF38195EDA34008E9B9C = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					B319DF42195EDA34008E9B9C = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = B319DF38195EDA34008E9B9C;
 					};
 				};
 			};
@@ -173,6 +287,8 @@
 			targets = (
 				920E2ECE195ED92400BBF13A /* Hawking */,
 				920E2EDB195ED92400BBF13A /* HawkingTests */,
+				B319DF38195EDA34008E9B9C /* Parser */,
+				B319DF42195EDA34008E9B9C /* ParserTests */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +303,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		920E2EDA195ED92400BBF13A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B319DF41195EDA34008E9B9C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -212,6 +335,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B319DF35195EDA34008E9B9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B319DF3E195EDA34008E9B9C /* Parser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B319DF3F195EDA34008E9B9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -219,6 +357,11 @@
 			isa = PBXTargetDependency;
 			target = 920E2ECE195ED92400BBF13A /* Hawking */;
 			targetProxy = 920E2EDD195ED92400BBF13A /* PBXContainerItemProxy */;
+		};
+		B319DF46195EDA34008E9B9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B319DF38195EDA34008E9B9C /* Parser */;
+			targetProxy = B319DF45195EDA34008E9B9C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -358,6 +501,62 @@
 			};
 			name = Release;
 		};
+		B319DF4A195EDA34008E9B9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				METAL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B319DF4B195EDA34008E9B9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				METAL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B319DF4C195EDA34008E9B9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ParserTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B319DF4D195EDA34008E9B9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ParserTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -377,12 +576,30 @@
 				920E2EE8195ED92400BBF13A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		920E2EE9195ED92400BBF13A /* Build configuration list for PBXNativeTarget "HawkingTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				920E2EEA195ED92400BBF13A /* Debug */,
 				920E2EEB195ED92400BBF13A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B319DF4E195EDA34008E9B9C /* Build configuration list for PBXNativeTarget "Parser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B319DF4A195EDA34008E9B9C /* Debug */,
+				B319DF4B195EDA34008E9B9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B319DF4F195EDA34008E9B9C /* Build configuration list for PBXNativeTarget "ParserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B319DF4C195EDA34008E9B9C /* Debug */,
+				B319DF4D195EDA34008E9B9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
