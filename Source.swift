@@ -10,10 +10,12 @@ import UIKit
 class Source {
     let Url:NSURL
     let Name: String
+    let Id:Int
     
-    init(Name name: String, sourceUrl:NSURL){
+    init(Name name: String, sourceUrl:NSURL , id:Int){
         self.Name = name
         self.Url = sourceUrl
+        self.Id = id
     }
     
 }

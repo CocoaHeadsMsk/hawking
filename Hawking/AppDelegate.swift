@@ -20,11 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
+        
+        func fn(a: AnyObject) -> (AnyObject, AnyObject) {
+            println(a)
+            return ("", "")
+        }
 
-        Grabber().grabArticle(url: "https://schani.wordpress.com/tag/swift/", success: {article in
-                println(article)
-            }, failure: {error in
-                println(error)
+        Grabber().grabList(url: "http://blog.m4rr.ru/",
+            success: {data in
+                //var x = data.map(fn)
+            }, failure: { error in
+                print(error)
             })
         
         return true
