@@ -23,22 +23,16 @@ class Grabber {
             })
     }
     
-    func grabList(#url: String, success: (a:Array<AnyObject>) -> Void, failure: (err:NSError) -> Void) {
-        if let listUrl = NSURL.URLWithString(url) {
-            let manager = AFHTTPRequestOperationManager()
-            manager.requestSerializer = AFHTTPRequestSerializer()
-            manager.GET( "http://graph.facebook.com",
-                parameters: nil,
-                success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-                    println("JSON: " + responseObject.description)
-                },
-                failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
-                    println("Error: " + error.localizedDescription)
-                })
-        }
+    func grabList(#url: String, success: (a:Array<AnyObject>) -> Void, failure: (error: NSError) -> Void) -> Void {
+        self.loadData(url,
+            success: { data in
+                self.grabList(txt: data, success: success, failure: failure)
+            },
+            failure: failure
+        )
     }
     
-    func grabList(#txt: String, success: (a:Array<AnyObject>) -> Void, failure: (err:NSError) -> Void) {
+    func grabList(#txt: String, success: (a:Array<AnyObject>) -> Void, failure: (error: NSError) -> Void) -> Void {
         
     }
     
