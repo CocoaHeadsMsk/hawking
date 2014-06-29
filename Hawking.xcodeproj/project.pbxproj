@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D3619AA475C49B8A160C6AA /* libPods-grabber.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BD870D46D24CF7831D1C53 /* libPods-grabber.a */; };
 		920E2ED5195ED92400BBF13A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E2ED4195ED92400BBF13A /* AppDelegate.swift */; };
 		920E2ED7195ED92400BBF13A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 920E2ED6195ED92400BBF13A /* Images.xcassets */; };
 		920E2EE3195ED92400BBF13A /* HawkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E2EE2195ED92400BBF13A /* HawkingTests.swift */; };
@@ -30,6 +31,10 @@
 		B3C0DB96196033FD00B3DC30 /* GrabberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0DB95196033FD00B3DC30 /* GrabberTests.swift */; };
 		B3C0DB99196033FD00B3DC30 /* Grabber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C0DB84196033FC00B3DC30 /* Grabber.framework */; };
 		B3C0DB9A196033FD00B3DC30 /* Grabber.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3C0DB84196033FC00B3DC30 /* Grabber.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		B3C0DBA81960353600B3DC30 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0DBA41960353600B3DC30 /* ArticleModel.swift */; };
+		B3C0DBA91960353600B3DC30 /* Grabber-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C0DBA51960353600B3DC30 /* Grabber-Bridging-Header.h */; };
+		B3C0DBAA1960353600B3DC30 /* Grabber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0DBA61960353600B3DC30 /* Grabber.swift */; };
+		B3C0DBAB1960353600B3DC30 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0DBA71960353600B3DC30 /* ItemModel.swift */; };
 		CF2F8B065F444FA0BB7BDC3F /* libPods-project.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22307C4979D94954BFEC6174 /* libPods-project.a */; };
 /* End PBXBuildFile section */
 
@@ -114,10 +119,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		10849016A88F4A01A915DB67 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		11A904EF75F64308BDA0883A /* Pods-project.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-project.xcconfig"; path = "Pods/Pods-project.xcconfig"; sourceTree = "<group>"; };
 		22307C4979D94954BFEC6174 /* libPods-project.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-project.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B2E3E4EEC524ABAAC30F196 /* Pods-grabber.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grabber.xcconfig"; path = "Pods/Pods-grabber.xcconfig"; sourceTree = "<group>"; };
 		5335B853CC8B412282997A19 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		63BD870D46D24CF7831D1C53 /* libPods-grabber.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-grabber.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		920E2ECF195ED92400BBF13A /* Hawking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hawking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		920E2ED3195ED92400BBF13A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		920E2ED4195ED92400BBF13A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +153,10 @@
 		B3C0DB8E196033FD00B3DC30 /* GrabberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrabberTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3C0DB94196033FD00B3DC30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3C0DB95196033FD00B3DC30 /* GrabberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrabberTests.swift; sourceTree = "<group>"; };
+		B3C0DBA41960353600B3DC30 /* ArticleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
+		B3C0DBA51960353600B3DC30 /* Grabber-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Grabber-Bridging-Header.h"; sourceTree = "<group>"; };
+		B3C0DBA61960353600B3DC30 /* Grabber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grabber.swift; sourceTree = "<group>"; };
+		B3C0DBA71960353600B3DC30 /* ItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D3619AA475C49B8A160C6AA /* libPods-grabber.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +200,7 @@
 			children = (
 				5335B853CC8B412282997A19 /* libPods.a */,
 				22307C4979D94954BFEC6174 /* libPods-project.a */,
+				63BD870D46D24CF7831D1C53 /* libPods-grabber.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -201,9 +213,9 @@
 				B3C0DB85196033FC00B3DC30 /* Grabber */,
 				B3C0DB92196033FD00B3DC30 /* GrabberTests */,
 				920E2ED0195ED92400BBF13A /* Products */,
-				10849016A88F4A01A915DB67 /* Pods.xcconfig */,
 				0C9B6C3F73BD4CD997F18567 /* Frameworks */,
 				11A904EF75F64308BDA0883A /* Pods-project.xcconfig */,
+				4B2E3E4EEC524ABAAC30F196 /* Pods-grabber.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -360,6 +372,10 @@
 		B3C0DB85196033FC00B3DC30 /* Grabber */ = {
 			isa = PBXGroup;
 			children = (
+				B3C0DBA41960353600B3DC30 /* ArticleModel.swift */,
+				B3C0DBA51960353600B3DC30 /* Grabber-Bridging-Header.h */,
+				B3C0DBA61960353600B3DC30 /* Grabber.swift */,
+				B3C0DBA71960353600B3DC30 /* ItemModel.swift */,
 				B3C0DB88196033FC00B3DC30 /* Grabber.h */,
 				B3C0DB86196033FC00B3DC30 /* Supporting Files */,
 			);
@@ -399,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3C0DB89196033FC00B3DC30 /* Grabber.h in Headers */,
+				B3C0DBA91960353600B3DC30 /* Grabber-Bridging-Header.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,10 +471,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3C0DB9D196033FD00B3DC30 /* Build configuration list for PBXNativeTarget "Grabber" */;
 			buildPhases = (
+				9A9B85ADD08040BBABA87784 /* Check Pods Manifest.lock */,
 				B3C0DB7F196033FC00B3DC30 /* Sources */,
 				B3C0DB80196033FC00B3DC30 /* Frameworks */,
 				B3C0DB81196033FC00B3DC30 /* Headers */,
 				B3C0DB82196033FC00B3DC30 /* Resources */,
+				3372FCCB29BB46C58BEB9DED /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -584,6 +603,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Pods-project-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3372FCCB29BB46C58BEB9DED /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-grabber-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A9B85ADD08040BBABA87784 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		DE97C27FF0CC4F839ED6228F /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -632,6 +681,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3C0DBAB1960353600B3DC30 /* ItemModel.swift in Sources */,
+				B3C0DBA81960353600B3DC30 /* ArticleModel.swift in Sources */,
+				B3C0DBAA1960353600B3DC30 /* Grabber.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -838,6 +890,7 @@
 		};
 		B3C0DB9E196033FD00B3DC30 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B2E3E4EEC524ABAAC30F196 /* Pods-grabber.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -854,6 +907,7 @@
 				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Grabber/Grabber-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -862,6 +916,7 @@
 		};
 		B3C0DB9F196033FD00B3DC30 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B2E3E4EEC524ABAAC30F196 /* Pods-grabber.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -874,6 +929,7 @@
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Grabber/Grabber-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -949,6 +1005,7 @@
 				B3C0DB9F196033FD00B3DC30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B3C0DBA1196033FD00B3DC30 /* Build configuration list for PBXNativeTarget "GrabberTests" */ = {
 			isa = XCConfigurationList;
@@ -957,6 +1014,7 @@
 				B3C0DBA3196033FD00B3DC30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

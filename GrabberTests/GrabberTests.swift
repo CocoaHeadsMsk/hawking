@@ -2,7 +2,7 @@
 //  GrabberTests.swift
 //  GrabberTests
 //
-//  Created by Dmitry Ponomarev on 29/06/14.
+//  Created by Dmitry Ponomarev on 28/06/14.
 //  Copyright (c) 2014 CocoaHeadsMsk. All rights reserved.
 //
 
@@ -10,19 +10,45 @@ import XCTest
 
 class GrabberTests: XCTestCase {
     
+    let listGrabTestURL = "http://habrahabr.ru"
+    let articleGrabTestURL = "http://habrahabr.ru/post/227911/"
+    
+    var grabber: Grabber?
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        grabber = Grabber()
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testList() {
+        grabber.grabList(url: listGrabTestURL, success: {list as
+            
+            }, failure: {error in
+                
+            })
+        XCTAssert(true, "Invalid grab list")
+    }
+    
+    func testContentList() {
+        grabber.grabList(input: "sadasdsa", success: {list as
+            
+            }, failure: {error in
+                
+            })
+        XCTAssert(true, "Invalid grab list")
+    }
+    
+    func testArticle() {
+        grabber.grabArticle(url: articleGrabTestURL, success:{article in
+            
+            } failure: {err in
+                
+            })
+        XCTAssert(false, "Invalid grab article")
     }
     
     func testPerformanceExample() {
