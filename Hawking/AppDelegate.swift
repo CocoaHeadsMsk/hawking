@@ -82,7 +82,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         UIBarButtonItem.appearance().tintColor = UIColor.mainColor()
         
         UINavigationBar.appearance().barTintColor = UIColor.mainColor()
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()];
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), UITextAttributeTextColor : UIColor.whiteColor()];
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         
         UITabBar.appearance().tintColor = UIColor.mainColor()
         UITabBar.appearance().selectedImageTintColor = UIColor.mainColor()

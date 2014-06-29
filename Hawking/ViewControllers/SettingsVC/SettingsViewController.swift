@@ -23,7 +23,7 @@ enum AboutProgrammCells : Int
     case AboutProgrammInfo, AboutProgrammMailUs, AboutProgrammVersion
 }
 
-class SettingsViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
+class SettingsViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate {
     
     var sections = [SettingSections.ArticleControll, SettingSections.AboutProgramm]
     var articleControllCells = [ArticleControllCells.ArticleControllAdd, ArticleControllCells.ArticleControllSugestions]
@@ -106,6 +106,18 @@ class SettingsViewController: BaseViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let sectionType = sections[indexPath.section];
+        
+        if (sectionType == .ArticleControll) {
+            let articleControllCellType = articleControllCells[indexPath.row]
+            
+            if (articleControllCellType == .ArticleControllAdd) {
+                //var alert: UIAlertView = UIAlertView(title: "Введите источник", message: "", delegate: nil, cancelButtonTitle: "Отменить", otherButtonTitles: "Готово")
+               // alert.alertViewStyle = UIAlertViewStyle.PlainTextInput
+               // alert.show()
+            }
+        }
     }
 
 }

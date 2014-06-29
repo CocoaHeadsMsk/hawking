@@ -25,6 +25,8 @@ class LentViewController: BaseViewController, UITableViewDataSource, UITableView
         self.tableView.registerNib(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier);
         
         title = (isFave) ? "Fave" : "Lent"
+        
+        navigationController.condensesBarsOnSwipe = true
         // Do any additional setup after loading the view.
     }
 
@@ -32,6 +34,10 @@ class LentViewController: BaseViewController, UITableViewDataSource, UITableView
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //////////////////////////////////////////////////////////////////////////////////////
+    // MARK: - UITableViewDataSource
+    //////////////////////////////////////////////////////////////////////////////////////
     
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int
     {
@@ -53,14 +59,19 @@ class LentViewController: BaseViewController, UITableViewDataSource, UITableView
             cell.fillContent(nil, title: "Title", text: "Some info, Some info")
         }
         
-      //  cell.rightUtilityButtons = rightButtons()
         cell.leftUtilityButtons = rightButtons()
         cell.delegate = self
         
-        var alex = 5
-        
-        
         return cell
+    }
+    
+    //////////////////////////////////////////////////////////////////////////////////////
+    // MARK: - UITalbeViewDelegat
+    //////////////////////////////////////////////////////////////////////////////////////
+    
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        var article = ArticleViewController(nibName: "ArticleViewController", bundle: nil)
+        navigationController.pushViewController(article, animated: true);
     }
     
     //////////////////////////////////////////////////////////////////////////////////////

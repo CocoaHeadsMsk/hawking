@@ -10,14 +10,16 @@ import UIKit
 
 class ArticleViewController: BaseViewController {
 
+    @IBOutlet var webView: UIWebView
+    
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
+        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -26,7 +28,12 @@ class ArticleViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    func hidesBottomBarWhenPushed() -> Bool
+    {
+        return true
+    }
+    
     /*
     // #pragma mark - Navigation
 
