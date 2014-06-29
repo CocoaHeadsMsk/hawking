@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Grabber
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
@@ -22,6 +23,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         
         apperance();
         openStartLent();
+        
+        Grabber().grabArticle(url: "https://schani.wordpress.com/2014/06/11/associated-types-considered-weird/",
+            success: {data in
+                println("Title: "+data.title)
+                println("Content: "+data.content)
+            }, failure: { error in
+                print("Error: ")
+                print(error)
+            })
+        
+        Grabber().grabArticle(url: "http://habrahabr.ru/post/227455/",
+            success: {data in
+                println("Title: "+data.title)
+                println("Content: "+data.content)
+            }, failure: { error in
+                print("Error: ")
+                print(error)
+            })
+        
+        Grabber().grabArticle(url: "http://lenta.ru/news/2014/06/29/train/",
+            success: {data in
+                println("Title: "+data.title)
+                println("Content: "+data.content)
+            }, failure: { error in
+                print("Error: ")
+                print(error)
+            })
         
         return true
     }

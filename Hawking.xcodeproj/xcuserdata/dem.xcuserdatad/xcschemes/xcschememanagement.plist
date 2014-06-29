@@ -4,15 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Grabber.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>Hawking.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
-		</dict>
-		<key>Parser.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -33,6 +33,26 @@
 			<true/>
 		</dict>
 		<key>B319DF42195EDA34008E9B9C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B36E82C2195EE985005F57B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B36E82CC195EE985005F57B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B3C0DB83196033FC00B3DC30</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B3C0DB8D196033FD00B3DC30</key>
 		<dict>
 			<key>primary</key>
 			<true/>
