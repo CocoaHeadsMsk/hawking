@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return ("", "")
         }
         
-        Grabber().grabList(url: "http://lenta.ru/rss",
+        Grabber().grabList(url: "http://lenta.ru/",
             success: {data in
                 //var x = data.map(fn)
             }, failure: { error in

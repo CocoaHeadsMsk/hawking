@@ -16,8 +16,20 @@ struct TextBlockCost {
 
 class Grabber {
     
+    var baseUrl = ""
+    
     func _loadData(url: String, success: (data: String) -> Void, failure: (error: NSError) -> Void) {
+        
         let manager = AFHTTPRequestOperationManager()
+        let u1 = NSURL(string: url)
+        
+        println(u1.absoluteString)
+            if let u2 = u1.absoluteString {
+                if u2.hasPrefix("http") {
+                    self.baseUrl = u2
+                }
+            }
+
         manager.responseSerializer = AFHTTPResponseSerializer()
         manager.requestSerializer.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10) AppleWebKit/538.39.41 (KHTML, like Gecko) Version/8.0 Safari/538.39.41", forHTTPHeaderField: "User-Agent")
         manager.GET(url,
@@ -26,7 +38,9 @@ class Grabber {
                 success(data: operation.responseString)
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
-                failure(error: error)
+                if nil != failure {
+                    failure(error: error)
+                }
             })
     }
     
@@ -34,29 +48,91 @@ class Grabber {
     // MARK: – Grab List
     ////////////////////////////////////////////////////////////////////////////
 
+    func fetchRss(pageContent: String) { //, success: (data: String) -> Void, failure: (error: NSError) -> Void) -> Void {
+        
+//  <link rel="alternate" type="application/rss+xml" title="Example" href="http://www.aweber.com/blog/feed/" />
+        
+        var data = pageContent.dataUsingEncoding(NSUTF8StringEncoding)
+        let doc = TFHpple.hppleWithHTMLData(data)
+        let list = doc.searchWithXPathQuery("//html/head")
+        
+
+        
+        var rssUrl = ""
+        
+        if list.count > 0 {
+            self.each(list[0] as TFHppleElement, level: 0, { level, el in
+                if let tag = el.tagName {
+                    
+
+                    switch tag {
+                    case "link":
+                        if let attr = el.attributes {
+                            if let at = attr["type"] as? String {
+                                if let link = attr["href"] as? String {
+                                        if at == "application/rss+xml" {
+                                            if link.hasPrefix("http") {
+                                                rssUrl = link
+                                            } else {
+                                                var u = NSURL(string: link, relativeToURL: NSURL(string: self.baseUrl))
+                                                rssUrl = u.absoluteString
+                                            }
+                                            println(rssUrl)
+
+                                    }
+                                }
+                            }
+                            
+                        }
+                    default:
+                        break
+                    }
+                }
+                return false
+                })
+        }
+        
+    }
+    
+    func parseList(domTree: Array<AnyObject>) {
+        
+        
+        
+        
+    }
+    
     func grabList(#url: String, success: (a: Array<AnyObject>) -> Void, failure: (error: NSError) -> Void) -> Void {
+        
         self._loadData(url,
             success: { data in
-                self.fetchRssUrlOnPage(
-                    txt: data,
-                    success: { data in
-                        self._loadData(
-                            data,
-                            success: {
-                                self.grabList(
-                                    txt: data,
-                                    success: success,
-                                    failure: failure
-                                )
-                            },
-                            failure: failure
-                        )
-                    },
-                    failure: failure
-                )
+                self.fetchRss(data)
+//                return
             },
             failure: failure
         )
+        
+//        self._loadData(url,
+//            success: { data in
+//                self.fetchRssUrlOnPage(
+//                    txt: data,
+//                    success: { data in
+//                        self._loadData(
+//                            data,
+//                            success: {
+//                                self.grabList(
+//                                    txt: data,
+//                                    success: success,
+//                                    failure: failure
+//                                )
+//                            },
+//                            failure: failure
+//                        )
+//                    },
+//                    failure: failure
+//                )
+//            },
+//            failure: failure
+//        )
     }
     
     func grabList(#txt: String, success: (a: Array<AnyObject>) -> Void, failure: (error: NSError) -> Void) -> Void {
@@ -72,50 +148,8 @@ class Grabber {
         for item: AnyObject in arr {
             if let it = item as? NSDictionary {
                 println(it["link"])
-
             }
         }
-        
-        
-        
-        
-//        if let domTree: Array = aHpple.searchWithXPathQuery("//rss/channel") {
-////            println(domTree)
-//            if domTree.count > 0 {
-//                self.parseList(domTree)
-//            }
-////            let qw = domTree[0] as TFHppleElement
-////            println(qw)
-//        }
-//        success(a: [])
-    }
-    
-    func parseList(domTree: Array<AnyObject>) {
-        self.each(domTree[0] as TFHppleElement, level: 0, { level, el in
-            
-            if let tag = el.tagName {
-                switch tag {
-                case "item":
-                    return true
-//                    println(el.raw)
-                case "title":
-                    println(el.raw)
-                case "link":
-                    println(el.content)
-                case "description":
-                    println(el)
-                default:
-//                    println(el.raw)
-                    break
-                }
-            }
-            
-            return false
-        })
-    }
-    
-    func fetchRssUrlOnPage(#txt: String, success: (data: String) -> Void, failure: (error: NSError) -> Void) -> Void {
-        
     }
     
     ////////////////////////////////////////////////////////////////////////////
