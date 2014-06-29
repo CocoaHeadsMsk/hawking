@@ -143,23 +143,9 @@ class Grabber {
                 // Check tags
                 if let tag = el.tagName {
                     switch tag {
-<<<<<<< HEAD
                     case "p", "pre", "code", "h1", "h2", "h3", "h4", "h5":
                         var elm = self._baseLevelFor(el)
                         var blockPath = self._pathFor(elm)
-=======
-                    case "p":
-                        fallthrough
-                    case "pre":
-                        fallthrough
-                    case "p", "pre", "code":
-//                        print(" @@@@-> ")
-//                        print(self.pathFor(el))
-//                        print(" -> ")
-//                        println(el.raw)
-                        
-                        var blockPath = self.pathFor(el.parent)
->>>>>>> 653e7506f480b198eaaf51363b57473e1e4dacad
                         
                         if let bc = blocks[blockPath] {
                             var bc2 = bc
