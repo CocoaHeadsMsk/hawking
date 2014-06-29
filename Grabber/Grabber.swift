@@ -77,7 +77,7 @@ class Grabber {
     }
     
     func parseList(domTree: Array<AnyObject>) {
-        self.each(domTree[0] as TFHppleElement, level: 0, { level, el in
+        self._each(domTree[0] as TFHppleElement, level: 0, { level, el in
             
             if let tag = el.tagName {
                 switch tag {
@@ -193,7 +193,7 @@ class Grabber {
 
         for block in list {
             if self._parseArticleFromHtml(block.domElement, article: &article) {
-                println("########## " + String(block.index)+" > "+String(block.contentSize))
+//                println("########## " + String(block.index)+" > "+String(block.contentSize))
                 success(article: article)
                 return
             }

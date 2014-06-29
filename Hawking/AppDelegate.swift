@@ -26,14 +26,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return ("", "")
         }
 
-        Grabber().grabList(url: "http://lenta.ru/rss",
+//        Grabber().grabList(url: "http://lenta.ru/rss",
+//            success: {data in
+//                //var x = data.map(fn)
+//            }, failure: { error in
+//                print(error)
+//            })
+        
+        Grabber().grabArticle(url: "https://schani.wordpress.com/2014/06/11/associated-types-considered-weird/",
             success: {data in
-                //var x = data.map(fn)
+                println("Title: "+data.title)
+                println("Content: "+data.content)
             }, failure: { error in
+                print("Error: ")
                 print(error)
             })
         
-        Grabber().grabArticle(url: "https://schani.wordpress.com/2014/06/11/associated-types-considered-weird/",
+        Grabber().grabArticle(url: "http://habrahabr.ru/post/227455/",
+            success: {data in
+                println("Title: "+data.title)
+                println("Content: "+data.content)
+            }, failure: { error in
+                print("Error: ")
+                print(error)
+            })
+        
+        Grabber().grabArticle(url: "http://lenta.ru/news/2014/06/29/train/",
             success: {data in
                 println("Title: "+data.title)
                 println("Content: "+data.content)
