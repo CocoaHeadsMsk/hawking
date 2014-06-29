@@ -10,7 +10,7 @@ import UIKit
 
 let maxLength: Int = 90
 
-class LentFeedCell: UITableViewCell {
+class LentFeedCell: SWTableViewCell {
 
     @IBOutlet var articleImageView: UIImageView
     @IBOutlet var articleTextLabel: UILabel

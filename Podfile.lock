@@ -1,10 +1,13 @@
 PODS:
-  - MSCMoreOptionTableViewCell (1.1)
+  - MBProgressHUD (0.8)
+  - SWTableViewCell (0.3.0)
 
 DEPENDENCIES:
-  - MSCMoreOptionTableViewCell (~> 1.1)
+  - MBProgressHUD (~> 0.5)
+  - SWTableViewCell (~> 0.3.0)
 
 SPEC CHECKSUMS:
-  MSCMoreOptionTableViewCell: e9aeaca2f366b342be31b8c28b153210757d2142
+  MBProgressHUD: c356980b0cd097f19acec959b49dca5eb8ec31be
+  SWTableViewCell: 1725f7607ce4c154264c18aeb78e4636b11b0b29
 
 COCOAPODS: 0.33.1

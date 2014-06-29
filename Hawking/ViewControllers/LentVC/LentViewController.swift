@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LentViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
+class LentViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, SWTableViewCellDelegate {
 
     @IBOutlet var tableView: UITableView
     var isFave = false;
@@ -53,8 +53,35 @@ class LentViewController: BaseViewController, UITableViewDataSource, UITableView
             cell.fillContent(nil, title: "Title", text: "Some info, Some info")
         }
         
+      //  cell.rightUtilityButtons = rightButtons()
+        cell.leftUtilityButtons = rightButtons()
+        cell.delegate = self
+        
+        var alex = 5
+        
         
         return cell
+    }
+    
+    //////////////////////////////////////////////////////////////////////////////////////
+    // MARK: - SWTableViewCellButtons
+    //////////////////////////////////////////////////////////////////////////////////////
+    
+    func rightButtons() -> NSMutableArray {
+        var array: NSMutableArray = NSMutableArray()
+        array.sw_addUtilityButtonWithColor(UIColor.redColor(), title: "Delete");
+        array.sw_addUtilityButtonWithColor(UIColor.mainColor(), title: "Fave");
+        
+        return array
+    }
+    
+    //////////////////////////////////////////////////////////////////////////////////////
+    // MARK: - SWTableViewCellDelegats
+    //////////////////////////////////////////////////////////////////////////////////////
+    
+    func swipeableTableViewCell(cell: SWTableViewCell, didTriggerLeftUtilityButtonWithIndex index: Int)
+    {
+        println(index)
     }
 
 }
