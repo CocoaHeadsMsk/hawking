@@ -25,11 +25,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             println(a)
             return ("", "")
         }
-
+        
         Grabber().grabList(url: "http://blog.m4rr.ru/",
             success: {data in
                 //var x = data.map(fn)
             }, failure: { error in
+                print(error)
+            })
+        
+        Grabber().grabArticle(url: "https://schani.wordpress.com/2014/06/11/associated-types-considered-weird/",
+            success: {data in
+                println("Title: "+data.title)
+                println("Content: "+data.content)
+            }, failure: { error in
+                print("Error: ")
                 print(error)
             })
         
