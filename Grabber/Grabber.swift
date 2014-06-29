@@ -37,7 +37,23 @@ class Grabber {
     func grabList(#url: String, success: (a: Array<AnyObject>) -> Void, failure: (error: NSError) -> Void) -> Void {
         self._loadData(url,
             success: { data in
-                self.grabList(txt: data, success: success, failure: failure)
+                self.fetchRssUrlOnPage(
+                    txt: data,
+                    success: { data in
+                        self._loadData(
+                            data,
+                            success: {
+                                self.grabList(
+                                    txt: data,
+                                    success: success,
+                                    failure: failure
+                                )
+                            },
+                            failure: failure
+                        )
+                    },
+                    failure: failure
+                )
             },
             failure: failure
         )
@@ -96,6 +112,10 @@ class Grabber {
             
             return false
         })
+    }
+    
+    func fetchRssUrlOnPage(#txt: String, success: (data: String) -> Void, failure: (error: NSError) -> Void) -> Void {
+        
     }
     
     ////////////////////////////////////////////////////////////////////////////
