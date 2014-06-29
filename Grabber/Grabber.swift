@@ -32,6 +32,10 @@ class Grabber {
             })
     }
     
+    ////////////////////////////////////////////////////////////////////////////
+    // MARK: – Grab List
+    ////////////////////////////////////////////////////////////////////////////
+
     func grabList(#url: String, success: (a: Array<AnyObject>) -> Void, failure: (error: NSError) -> Void) -> Void {
         self._loadData(url,
             success: { data in
@@ -43,18 +47,57 @@ class Grabber {
     
     func grabList(#txt: String, success: (a: Array<AnyObject>) -> Void, failure: (error: NSError) -> Void) -> Void {
         let htmlData = txt.dataUsingEncoding(NSUTF8StringEncoding)
-        let aHpple = TFHpple.hppleWithHTMLData(htmlData)
+        //let aHpple = TFHpple.hppleWithHTMLData(htmlData)
         
-        if let domTree: Array = aHpple.searchWithXPathQuery("//body") {
-            let qw = domTree[0] as TFHppleElement
-//            println(qw)
+
+        var par = XMLDictionaryParser.sharedInstance()
+        var dic = par.dictionaryWithData(htmlData)
+        var arr = dic.arrayValueForKeyPath("channel.item")
+
+        
+        for item: AnyObject in arr {
+            if let it = item as? NSDictionary {
+                println(it["link"])
+
+            }
         }
-//        self.parseList(domTree)
-        success(a: [])
+        
+        
+        
+        
+//        if let domTree: Array = aHpple.searchWithXPathQuery("//rss/channel") {
+////            println(domTree)
+//            if domTree.count > 0 {
+//                self.parseList(domTree)
+//            }
+////            let qw = domTree[0] as TFHppleElement
+////            println(qw)
+//        }
+//        success(a: [])
     }
     
     func parseList(domTree: Array<AnyObject>) {
-        
+        self.each(domTree[0] as TFHppleElement, level: 0, { level, el in
+            
+            if let tag = el.tagName {
+                switch tag {
+                case "item":
+                    return true
+//                    println(el.raw)
+                case "title":
+                    println(el.raw)
+                case "link":
+                    println(el.content)
+                case "description":
+                    println(el)
+                default:
+//                    println(el.raw)
+                    break
+                }
+            }
+            
+            return false
+        })
     }
     
     ////////////////////////////////////////////////////////////////////////////
@@ -100,9 +143,23 @@ class Grabber {
                 // Check tags
                 if let tag = el.tagName {
                     switch tag {
+<<<<<<< HEAD
                     case "p", "pre", "code", "h1", "h2", "h3", "h4", "h5":
                         var elm = self._baseLevelFor(el)
                         var blockPath = self._pathFor(elm)
+=======
+                    case "p":
+                        fallthrough
+                    case "pre":
+                        fallthrough
+                    case "p", "pre", "code":
+//                        print(" @@@@-> ")
+//                        print(self.pathFor(el))
+//                        print(" -> ")
+//                        println(el.raw)
+                        
+                        var blockPath = self.pathFor(el.parent)
+>>>>>>> 653e7506f480b198eaaf51363b57473e1e4dacad
                         
                         if let bc = blocks[blockPath] {
                             var bc2 = bc

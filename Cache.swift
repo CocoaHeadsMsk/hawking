@@ -17,10 +17,10 @@ class Cache {
     func isInCache(#url: String) -> String?{
         var inCache:String?
         for article in self.cache {
-            if article.URL.bridgeToObjectiveC().containsString(url)
-            {
-                inCache = article
-            }
+//            if article.URL.bridgeToObjectiveC().containsString(url)
+//            {
+//                inCache = article
+//            }
         }
         return inCache
     }
@@ -39,10 +39,10 @@ class Cache {
     
     func returnArticle(#url: String) -> String?{
         for article in self.cache {
-            if article.bridgeToObjectiveC().containsString(url)
-            {
-                return article
-            }
+//            if article.bridgeToObjectiveC().containsString(url)
+//            {
+//                return article
+//            }
         }
         return nil
     }

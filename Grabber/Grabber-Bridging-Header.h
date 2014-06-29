@@ -10,3 +10,7 @@
 
 #import "hpple/TFHpple.h"
 #import "hpple/XPathQuery.h"
+#import "XMLDictionary/XMLDictionary.h"
+
+
+
