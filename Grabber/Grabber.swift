@@ -249,8 +249,8 @@ class Grabber {
     func _parseArticleFromHtml(doc: TFHppleElement, inout article: ArticleModel) -> Bool {
         var title = doc.firstChildWithTagName("h1")
         if nil != title {
-            var range = doc.raw.rangeOfString(title.raw, options: NSStringCompareOptions.AnchoredSearch, range: nil, locale: nil)
-            article.content = _simplifyHtml(doc.raw.stringByReplacingCharactersInRange(range, withString: ""))
+//            var range = doc.raw.rangeOfString(title.raw, options: NSStringCompareOptions.AnchoredSearch, range: nil, locale: nil)
+            article.content = doc.raw // _simplifyHtml(doc.raw.stringByReplacingCharactersInRange(range, withString: ""))
             article.title = self._cleanHtml(title.raw)
         } else {
             article.content = _simplifyHtml(doc.raw)
@@ -286,11 +286,11 @@ class Grabber {
     
     func _simplifyHtml(html: String) -> String {
         // Multistring matches not work
-        var r = html.rangeOfString("/<script[^>]*>.*</script>/ig", options: NSStringCompareOptions.RegularExpressionSearch, range: nil, locale: nil)
-        if r.isEmpty {
+//        var r = html.rangeOfString("/<script[^>]*>.*</script>/ig", options: NSStringCompareOptions.RegularExpressionSearch, range: nil, locale: nil)
+//        if r.isEmpty {
             return html
-        }
-        return html.stringByReplacingCharactersInRange(r, withString:"")
+//        }
+//        return html.stringByReplacingCharactersInRange(r, withString:"")
     }
     
     func _pathFor(elem: TFHppleElement) -> String {
