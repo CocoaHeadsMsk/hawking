@@ -23,12 +23,11 @@ class Grabber {
         let manager = AFHTTPRequestOperationManager()
         let u1 = NSURL(string: url)
         
-        println(u1.absoluteString)
-            if let u2 = u1.absoluteString {
-                if u2.hasPrefix("http") {
-                    self.baseUrl = u2
-                }
+        if let u2 = u1.absoluteString {
+            if u2.hasPrefix("http") {
+                self.baseUrl = u2
             }
+        }
 
         manager.responseSerializer = AFHTTPResponseSerializer()
         manager.requestSerializer.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10) AppleWebKit/538.39.41 (KHTML, like Gecko) Version/8.0 Safari/538.39.41", forHTTPHeaderField: "User-Agent")
@@ -48,7 +47,7 @@ class Grabber {
     // MARK: – Grab List
     ////////////////////////////////////////////////////////////////////////////
 
-    func fetchRss(pageContent: String) { //, success: (data: String) -> Void, failure: (error: NSError) -> Void) -> Void {
+    func fetchRss(pageContent: String, success: (rssUrl: String) -> Void, failure: (error: NSError) -> Void) -> Void {
         
 //  <link rel="alternate" type="application/rss+xml" title="Example" href="http://www.aweber.com/blog/feed/" />
         
@@ -61,10 +60,9 @@ class Grabber {
         var rssUrl = ""
         
         if list.count > 0 {
-            self.each(list[0] as TFHppleElement, level: 0, { level, el in
+            self._each(list[0] as TFHppleElement, level: 0, { level, el in
                 if let tag = el.tagName {
                     
-
                     switch tag {
                     case "link":
                         if let attr = el.attributes {
@@ -73,16 +71,15 @@ class Grabber {
                                         if at == "application/rss+xml" {
                                             if link.hasPrefix("http") {
                                                 rssUrl = link
+                                                success(rssUrl: rssUrl)
                                             } else {
                                                 var u = NSURL(string: link, relativeToURL: NSURL(string: self.baseUrl))
                                                 rssUrl = u.absoluteString
+                                                success(rssUrl: rssUrl)
                                             }
-                                            println(rssUrl)
-
                                     }
                                 }
                             }
-                            
                         }
                     default:
                         break
@@ -91,64 +88,36 @@ class Grabber {
                 return false
                 })
         }
-        
-    }
-    
-    func parseList(domTree: Array<AnyObject>) {
-        
-        
-        
-        
     }
     
     func grabList(#url: String, success: (a: Array<AnyObject>) -> Void, failure: (error: NSError) -> Void) -> Void {
-        
         self._loadData(url,
             success: { data in
-                self.fetchRss(data)
-//                return
+                self.fetchRss(data, success: { rssUrl in
+                    self._loadData(rssUrl, success: { rssContent in
+                        self.grabList(txt: rssContent, success: success, failure: failure)
+                        },
+                        failure: failure
+                    )
+                    },
+                    failure: failure)
             },
             failure: failure
         )
-        
-//        self._loadData(url,
-//            success: { data in
-//                self.fetchRssUrlOnPage(
-//                    txt: data,
-//                    success: { data in
-//                        self._loadData(
-//                            data,
-//                            success: {
-//                                self.grabList(
-//                                    txt: data,
-//                                    success: success,
-//                                    failure: failure
-//                                )
-//                            },
-//                            failure: failure
-//                        )
-//                    },
-//                    failure: failure
-//                )
-//            },
-//            failure: failure
-//        )
     }
     
     func grabList(#txt: String, success: (a: Array<AnyObject>) -> Void, failure: (error: NSError) -> Void) -> Void {
         let htmlData = txt.dataUsingEncoding(NSUTF8StringEncoding)
-        //let aHpple = TFHpple.hppleWithHTMLData(htmlData)
-        
 
         var par = XMLDictionaryParser.sharedInstance()
         var dic = par.dictionaryWithData(htmlData)
         var arr = dic.arrayValueForKeyPath("channel.item")
 
-        
-        for item: AnyObject in arr {
-            if let it = item as? NSDictionary {
-                println(it["link"])
-            }
+        if nil == arr {
+            failure(error: NSError(domain: "", code: 0, userInfo: ["msg":"Invalid array"]))
+            
+        } else {
+            success(a: arr)
         }
     }
     
