@@ -18,8 +18,19 @@ struct TextBlockCost {
 
 class Grabber {
     
+    var baseUrl = ""
+    
     func _loadData(url: String, success: (data: String) -> Void, failure: (error: NSError) -> Void) {
+        
         let manager = AFHTTPRequestOperationManager()
+        let u1 = NSURL(string: url)
+        
+        if let u2 = u1.absoluteString {
+            if u2.hasPrefix("http") {
+                self.baseUrl = u2
+            }
+        }
+
         manager.responseSerializer = AFHTTPResponseSerializer()
         manager.requestSerializer.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10) AppleWebKit/538.39.41 (KHTML, like Gecko) Version/8.0 Safari/538.39.41", forHTTPHeaderField: "User-Agent")
         manager.GET(url,
@@ -28,7 +39,9 @@ class Grabber {
                 success(data: operation.responseString)
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
-                failure(error: error)
+                if nil != failure {
+                    failure(error: error)
+                }
             })
     }
     
@@ -36,10 +49,60 @@ class Grabber {
     // MARK: – Grab List
     ////////////////////////////////////////////////////////////////////////////
 
+    func fetchRss(pageContent: String, success: (rssUrl: String) -> Void, failure: (error: NSError) -> Void) -> Void {
+        
+//  <link rel="alternate" type="application/rss+xml" title="Example" href="http://www.aweber.com/blog/feed/" />
+        
+        var data = pageContent.dataUsingEncoding(NSUTF8StringEncoding)
+        let doc = TFHpple.hppleWithHTMLData(data)
+        let list = doc.searchWithXPathQuery("//html/head")
+        
+
+        
+        var rssUrl = ""
+        
+        if list.count > 0 {
+            self._each(list[0] as TFHppleElement, level: 0, { level, el in
+                if let tag = el.tagName {
+                    
+                    switch tag {
+                    case "link":
+                        if let attr = el.attributes {
+                            if let at = attr["type"] as? String {
+                                if let link = attr["href"] as? String {
+                                        if at == "application/rss+xml" {
+                                            if link.hasPrefix("http") {
+                                                rssUrl = link
+                                                success(rssUrl: rssUrl)
+                                            } else {
+                                                var u = NSURL(string: link, relativeToURL: NSURL(string: self.baseUrl))
+                                                rssUrl = u.absoluteString
+                                                success(rssUrl: rssUrl)
+                                            }
+                                    }
+                                }
+                            }
+                        }
+                    default:
+                        break
+                    }
+                }
+                return false
+                })
+        }
+    }
+    
     func grabList(#url: String, success: (a: Array<AnyObject>) -> Void, failure: (error: NSError) -> Void) -> Void {
         self._loadData(url,
             success: { data in
-                self.grabList(txt: data, success: success, failure: failure)
+                self.fetchRss(data, success: { rssUrl in
+                    self._loadData(rssUrl, success: { rssContent in
+                        self.grabList(txt: rssContent, success: success, failure: failure)
+                        },
+                        failure: failure
+                    )
+                    },
+                    failure: failure)
             },
             failure: failure
         )
@@ -47,57 +110,16 @@ class Grabber {
     
     func grabList(#txt: String, success: (a: Array<AnyObject>) -> Void, failure: (error: NSError) -> Void) -> Void {
         let htmlData = txt.dataUsingEncoding(NSUTF8StringEncoding)
-        //let aHpple = TFHpple.hppleWithHTMLData(htmlData)
-        
 
         var par = XMLDictionaryParser.sharedInstance()
         var dic = par.dictionaryWithData(htmlData)
         var arr = dic.arrayValueForKeyPath("channel.item")
 
-        
-        for item: AnyObject in arr {
-            if let it = item as? NSDictionary {
-                println(it["link"])
-
-            }
+        if nil == arr {
+            failure(error: NSError(domain: "", code: 0, userInfo: ["msg":"Invalid array"]))            
+        } else {
+            success(a: arr)
         }
-        
-        
-        
-        
-//        if let domTree: Array = aHpple.searchWithXPathQuery("//rss/channel") {
-////            println(domTree)
-//            if domTree.count > 0 {
-//                self.parseList(domTree)
-//            }
-////            let qw = domTree[0] as TFHppleElement
-////            println(qw)
-//        }
-//        success(a: [])
-    }
-    
-    func parseList(domTree: Array<AnyObject>) {
-        self._each(domTree[0] as TFHppleElement, level: 0, { level, el in
-            
-            if let tag = el.tagName {
-                switch tag {
-                case "item":
-                    return true
-//                    println(el.raw)
-                case "title":
-                    println(el.raw)
-                case "link":
-                    println(el.content)
-                case "description":
-                    println(el)
-                default:
-//                    println(el.raw)
-                    break
-                }
-            }
-            
-            return false
-        })
     }
     
     ////////////////////////////////////////////////////////////////////////////
