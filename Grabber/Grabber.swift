@@ -45,16 +45,33 @@ class Grabber {
     
     func grabList(#txt: String, success: (a: Array<AnyObject>) -> Void, failure: (error: NSError) -> Void) -> Void {
         let htmlData = txt.dataUsingEncoding(NSUTF8StringEncoding)
-        let aHpple = TFHpple.hppleWithHTMLData(htmlData)
+        //let aHpple = TFHpple.hppleWithHTMLData(htmlData)
         
-        if let domTree: Array = aHpple.searchWithXPathQuery("//body") {
-            if domTree.count > 0 {
-                self.parseList(domTree)
+
+        var par = XMLDictionaryParser.sharedInstance()
+        var dic = par.dictionaryWithData(htmlData)
+        var arr = dic.arrayValueForKeyPath("channel.item")
+
+        
+        for item: AnyObject in arr {
+            if let it = item as? NSDictionary {
+                println(it["link"])
+
             }
-//            let qw = domTree[0] as TFHppleElement
-//            println(qw)
         }
-        success(a: [])
+        
+        
+        
+        
+//        if let domTree: Array = aHpple.searchWithXPathQuery("//rss/channel") {
+////            println(domTree)
+//            if domTree.count > 0 {
+//                self.parseList(domTree)
+//            }
+////            let qw = domTree[0] as TFHppleElement
+////            println(qw)
+//        }
+//        success(a: [])
     }
     
     func parseList(domTree: Array<AnyObject>) {
@@ -62,21 +79,22 @@ class Grabber {
             
             if let tag = el.tagName {
                 switch tag {
-//                case "item":
+                case "item":
+                    return true
 //                    println(el.raw)
                 case "title":
-                    println(el.content)
-                case "link":
-                    println(el.attributes)
-                case "description":
                     println(el.raw)
+                case "link":
+                    println(el.content)
+                case "description":
+                    println(el)
                 default:
 //                    println(el.raw)
                     break
                 }
             }
             
-            return true
+            return false
         })
     }
     
