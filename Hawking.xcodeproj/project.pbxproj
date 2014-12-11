@@ -29,7 +29,6 @@
 		B3C0DB89196033FC00B3DC30 /* Grabber.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C0DB88196033FC00B3DC30 /* Grabber.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B3C0DB8F196033FD00B3DC30 /* Grabber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C0DB84196033FC00B3DC30 /* Grabber.framework */; };
 		B3C0DB96196033FD00B3DC30 /* GrabberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0DB95196033FD00B3DC30 /* GrabberTests.swift */; };
-		B3C0DB99196033FD00B3DC30 /* Grabber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C0DB84196033FC00B3DC30 /* Grabber.framework */; };
 		B3C0DB9A196033FD00B3DC30 /* Grabber.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3C0DB84196033FC00B3DC30 /* Grabber.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		B3C0DBA81960353600B3DC30 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0DBA41960353600B3DC30 /* ArticleModel.swift */; };
 		B3C0DBA91960353600B3DC30 /* Grabber-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C0DBA51960353600B3DC30 /* Grabber-Bridging-Header.h */; };
@@ -126,7 +125,7 @@
 		63BD870D46D24CF7831D1C53 /* libPods-grabber.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-grabber.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		920E2ECF195ED92400BBF13A /* Hawking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hawking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		920E2ED3195ED92400BBF13A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		920E2ED4195ED92400BBF13A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Hawking/AppDelegate.swift; sourceTree = "<group>"; };
+		920E2ED4195ED92400BBF13A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		920E2ED6195ED92400BBF13A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		920E2EDC195ED92400BBF13A /* HawkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HawkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		920E2EE1195ED92400BBF13A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,7 +163,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3C0DB99196033FD00B3DC30 /* Grabber.framework in Frameworks */,
 				CF2F8B065F444FA0BB7BDC3F /* libPods-project.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,7 +206,6 @@
 		920E2EC6195ED92400BBF13A = {
 			isa = PBXGroup;
 			children = (
-				920E2ED4195ED92400BBF13A /* AppDelegate.swift */,
 				920E2ED1195ED92400BBF13A /* Hawking */,
 				920E2EDF195ED92400BBF13A /* HawkingTests */,
 				B3C0DB85196033FC00B3DC30 /* Grabber */,
@@ -235,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				929B60E9195EFE59006515D2 /* breakingnews1.jpg */,
+				920E2ED4195ED92400BBF13A /* AppDelegate.swift */,
 				929B60EB195EFF71006515D2 /* Extensions */,
 				923658C8195EEE1D008CDC77 /* ViewControllers */,
 				92DC2970195F841500DCE531 /* Core */,

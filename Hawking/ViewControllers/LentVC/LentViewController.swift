@@ -7,15 +7,15 @@
 //
 
 import UIKit
-import Grabber
+//import Grabber
 
 class LentViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, SWTableViewCellDelegate {
 
-    @IBOutlet var tableView: UITableView
+    @IBOutlet var tableView: UITableView?
     var isFave = false;
     var dataList: Array<AnyObject>?
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
     }
@@ -24,24 +24,24 @@ class LentViewController: BaseViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         
         let identifier: String? = "LentFeedCell";
-        self.tableView.registerNib(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier);
-        
+        self.tableView!.registerNib(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier);
+      
         title = (isFave) ? "Fave" : "Lent"
         
-        navigationController.condensesBarsOnSwipe = true
+//        navigationController.condensesBarsOnSwipe = true
         // Do any additional setup after loading the view.
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-            Grabber().grabList(url: "http://habr.ru", success: { list in
-                    self.dataList = list
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.tableView.reloadData()
-                    });
-                    return
-                }, failure: {error in
-                    println(error)
-                })
-        })
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+//            Grabber().grabList(url: "http://habr.ru", success: { list in
+//                    self.dataList = list
+//                    dispatch_async(dispatch_get_main_queue(), {
+//                        self.tableView.reloadData()
+//                    });
+//                    return
+//                }, failure: {error in
+//                    println(error)
+//                })
+//        })
     }
 
     override func didReceiveMemoryWarning() {

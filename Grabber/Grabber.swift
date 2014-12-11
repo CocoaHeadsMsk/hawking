@@ -39,7 +39,7 @@ class Grabber {
                 success(data: operation.responseString)
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
-                if nil != failure {
+                if nil != error {
                     failure(error: error)
                 }
             })
@@ -262,7 +262,7 @@ class Grabber {
         var r: Range<String.Index>
         var s = text
         while true {
-            r = s.rangeOfString("<[^>]+>", options: NSStringCompareOptions.RegularExpressionSearch, range: nil, locale: nil)
+            r = s.rangeOfString("<[^>]+>", options: NSStringCompareOptions.RegularExpressionSearch, range: nil, locale: nil)!
             if r.isEmpty {
                 break
             }
@@ -275,7 +275,7 @@ class Grabber {
         var r: Range<String.Index>
         var s = self._cleanHtml(text)
         while true {
-            r = s.rangeOfString("\\s+", options: NSStringCompareOptions.RegularExpressionSearch, range: nil, locale: nil)
+            r = s.rangeOfString("\\s+", options: NSStringCompareOptions.RegularExpressionSearch, range: nil, locale: nil)!
             if r.isEmpty {
                 break
             }
@@ -300,7 +300,7 @@ class Grabber {
             el = el.parent
             path = _complexNameFor(el) + ">" + path
         }
-        return path + "!" + String(elem.raw.utf16count)
+        return path + "!" + String(elem.raw.utf16Count)
     }
     
     func _complexNameFor(elem: TFHppleElement) -> String {
@@ -316,9 +316,9 @@ class Grabber {
     
     func _baseLevelFor(elem: TFHppleElement) -> TFHppleElement {
         var el = elem.parent
-        var simbolCount = self._cleanHtmlFull(el.raw).utf16count
+        var simbolCount = self._cleanHtmlFull(el.raw).utf16Count
         while true {
-            var nSimbolCount = self._cleanHtmlFull(el.parent.raw).utf16count
+            var nSimbolCount = self._cleanHtmlFull(el.parent.raw).utf16Count
             if nil != el.parent && (1 == el.parent.children.count/* || simbolCount == nSimbolCount*/) {
                 el = el.parent
                 simbolCount = nSimbolCount
@@ -349,7 +349,7 @@ class Grabber {
             }
             if i != lastIndex {
                 // Pack
-                var contentSize = self._cleanHtml(b.domElement.parent.raw).utf16count
+                var contentSize = self._cleanHtml(b.domElement.parent.raw).utf16Count
                 var nblock = TextBlockCost(path: self._pathFor(b.domElement.parent), domElement: b.domElement.parent,
                     blockCount: 1, contentSize: contentSize, index: i)
                 preparedBlocks.append(nblock)
@@ -364,11 +364,11 @@ class Grabber {
     
     func _isEqualBlockPath(path1: String, path2: String) -> Bool {
         var r = path1.rangeOfString("\\.[^\\.]$", options: NSStringCompareOptions.RegularExpressionSearch, range: nil, locale: nil)
-        if r.isEmpty {
+        if (r?.isEmpty != nil) {
             return false
         }
 
-        var path = path1.stringByReplacingCharactersInRange(r, withString:"")
+        var path = path1.stringByReplacingCharactersInRange(r!, withString:"")
         var range = NSRange(location: 0, length: countElements(path))
         var nss: NSString = path
         return nss.substringWithRange(range) == path

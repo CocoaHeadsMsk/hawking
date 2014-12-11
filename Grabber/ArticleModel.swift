@@ -11,5 +11,5 @@ import Foundation
 class ArticleModel : ItemModel {
   var content: String = ""
   
-  init() {}
+  override init() {}
 }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Grabber
+//import Grabber
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {

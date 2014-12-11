@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Grabber
+//import Grabber
 
 class ArticleViewController: BaseViewController {
 
@@ -25,17 +25,17 @@ class ArticleViewController: BaseViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        if nil != url {
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-                Grabber().grabArticle(url: self.url!, success: { article in
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.webView.loadHTMLString(article.content, baseURL: nil)
-                        });
-                    }, failure: {error in
-                        println(error)
-                    })
-                })
-        }
+//        if nil != url {
+//            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+//                Grabber().grabArticle(url: self.url!, success: { article in
+//                    dispatch_async(dispatch_get_main_queue(), {
+//                        self.webView.loadHTMLString(article.content, baseURL: nil)
+//                        });
+//                    }, failure: {error in
+//                        println(error)
+//                    })
+//                })
+//        }
     }
 
     override func didReceiveMemoryWarning() {
